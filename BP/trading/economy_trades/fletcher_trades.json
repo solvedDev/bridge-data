@@ -256,7 +256,7 @@
                 }
               ],
               "trader_exp": 30,
-              "max_uses": 1,
+              "max_uses": 4,
               "reward_exp": true
             }
           ]
@@ -284,7 +284,7 @@
                 }
               ],
               "trader_exp": 0,
-              "max_uses": 1,
+              "max_uses": 4,
               "reward_exp": true
             }
           ]
@@ -317,7 +317,7 @@
                 }
               ],
               "trader_exp": 0,
-              "max_uses": 1,
+              "max_uses": 4,
               "reward_exp": true
             },
             {

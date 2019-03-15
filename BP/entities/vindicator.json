@@ -106,7 +106,7 @@
           "first_founding_reward": 0
         },
         "minecraft:behavior.move_to_village": {
-          "priority": 5,
+          "priority": 4,
           "speed_multiplier": 1.0
         },
         "minecraft:loot": {
@@ -115,6 +115,9 @@
       },
       "minecraft:illager_squad_captain": {
         "minecraft:is_illager_captain": {
+        },
+        "minecraft:variant": {
+          "value": 1
         },
         "minecraft:equipment": {
           "table": "loot_tables/entities/vindicator_captain_equipment.json",
@@ -147,6 +150,9 @@
       },
       "minecraft:patrol_captain": {
         "minecraft:is_illager_captain": {
+        },
+        "minecraft:variant": {
+          "value": 1
         },
         "minecraft:equipment": {
           "table": "loot_tables/entities/vindicator_captain_equipment.json",
@@ -214,6 +220,9 @@
       "minecraft:type_family": {
         "family": [ "vindicator", "monster", "illager" ]
       },
+      "minecraft:variant": {
+        "value": 0
+      },
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0
@@ -240,8 +249,7 @@
       "minecraft:jump.static": {
       },
       "minecraft:follow_range": {
-        "value": 12,
-        "max": 12
+        "value": 64
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/vindication_illager.json"
@@ -255,7 +263,7 @@
         "priority": 0
       },
       "minecraft:behavior.melee_attack": {
-        "priority": 4,
+        "priority": 3,
         "speed_multiplier": 1,
         "track_target": false
       },
@@ -279,7 +287,7 @@
         "event": "minecraft:stop_aggro",
         "target": "self"
       },
-	    "minecraft:physics": {
+      "minecraft:physics": {
       }
     },
 

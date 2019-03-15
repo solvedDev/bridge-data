@@ -253,14 +253,47 @@
         "minecraft:mark_variant": {
           "value": 6
         }
+      },
+
+      "villager_skin_0": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+
+      "villager_skin_1": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+
+      "villager_skin_2": {
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+
+      "villager_skin_3": {
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+
+      "villager_skin_4": {
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+
+      "villager_skin_5": {
+        "minecraft:skin_id": {
+          "value": 5
+        }
       }
     },
 
     "components": {
       // Zombie_villager Components
-      "minecraft:mark_variant": {
-        "value": 0 // Zombie Villagers have the Plains biome skin by default
-      },
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
@@ -433,6 +466,34 @@
             ]
           },
           {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_0" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_1" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_2" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_3" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_4" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_5" ] }
+              }
+            ]
+          },
+          {
             "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant"
             },
             "randomize": [
@@ -551,123 +612,160 @@
       },
 
       "minecraft:entity_transformed": {
-        "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant" },
         "sequence": [
-          // Transform baby villager to baby zombie
           {
-            "filters": { "test": "has_component", "subject": "other", "value": "minecraft:is_baby" },
-            "add": { "component_groups": [ "baby" ] }
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:variant" },
+            "sequence": [
+              // Transform baby villager to baby zombie
+              {
+                "filters": { "test": "has_component", "subject": "other", "value": "minecraft:is_baby" },
+                "add": { "component_groups": [ "baby" ] }
+              },
+              // Transform adult villager to adult zombie
+              {
+                "filters": {  "test": "has_component",  "subject": "other", "operator": "!=", "value": "minecraft:is_baby" },
+                "add": { "component_groups": [ "adult" ] }
+              },
+              // Transform unskilled zombie to unskilled villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "unskilled" },
+                "add": { "component_groups": [ "unskilled" ] }
+              },
+              // Transform nitwit zombie to nitwit villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "nitwit" },
+                "add": { "component_groups": [ "nitwit" ] }
+              },
+              // Transform farmer zombie to farmer villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "farmer" },
+                "add": { "component_groups": [ "farmer" ] }
+              },
+              // Transform fisherman zombie to fisherman villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "fisherman" },
+                "add": { "component_groups": [ "fisherman" ] }
+              },
+              // Transform shepherd zombie to shepherd villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "shepherd" },
+                "add": { "component_groups": [ "shepherd" ] }
+              },
+              // Transform fletcher zombie to fletcher villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "fletcher" },
+                "add": { "component_groups": [ "fletcher" ] }
+              },
+              // Transform librarian zombie to librarian villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "librarian" },
+                "add": { "component_groups": [ "librarian" ] }
+              },
+              // Transform cartographer zombie to cartographer villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "cartographer" },
+                "add": { "component_groups": [ "cartographer" ] }
+              },
+              // Transform cleric zombie to cleric villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "cleric" },
+                "add": { "component_groups": [ "cleric" ] }
+              },
+              // Transform armorer zombie to armorer villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "armorer" },
+                "add": { "component_groups": [ "armorer" ] }
+              },
+              // Transform weaponsmith zombie to weaponsmith villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "weaponsmith" },
+                "add": { "component_groups": [ "weaponsmith" ] }
+              },
+              // Transform toolsmith zombie to toolsmith villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "toolsmith" },
+                "add": { "component_groups": [ "toolsmith" ] }
+              },
+              // Transform butcher zombie to butcher villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "butcher" },
+                "add": { "component_groups": [ "butcher" ] }
+              },
+              // Transform leatherworker zombie to leatherworker villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "leatherworker" },
+                "add": { "component_groups": [ "leatherworker" ] }
+              },
+              // Transform mason zombie to mason villager
+              {
+                "filters": { "test": "is_family", "subject": "other", "value": "mason" },
+                "add": { "component_groups": [ "mason" ] }
+              }
+            ]
           },
-          // Transform adult villager to adult zombie
           {
-            "filters": {  "test": "has_component",  "subject": "other", "operator": "!=", "value": "minecraft:is_baby" },
-            "add": { "component_groups": [ "adult" ] }
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:mark_variant" },
+            "sequence": [
+              // Transform desert zombie to desert villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 1 },
+                "add": { "component_groups": [ "desert_villager" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 2 },
+                "add": { "component_groups": [ "jungle_villager" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 3 },
+                "add": { "component_groups": [ "savanna_villager" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 4 },
+                "add": { "component_groups": [ "snow_villager" ] }
+              },
+              // Transform jungle zombie to jungle villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 5 },
+                "add": { "component_groups": [ "swamp_villager" ] }
+              },
+              // Transform taiga zombie to taiga villager
+              {
+                "filters": { "test": "is_mark_variant", "subject": "other", "value": 6 },
+                "add": { "component_groups": [ "taiga_villager" ] }
+              }
+            ]
           },
-          // Transform unskilled zombie to unskilled villager
           {
-            "filters": { "test": "is_family", "subject": "other", "value": "unskilled" },
-            "add": { "component_groups": [ "unskilled" ] }
-          },
-          // Transform nitwit zombie to nitwit villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "nitwit" },
-            "add": { "component_groups": [ "nitwit" ] }
-          },
-          // Transform farmer zombie to farmer villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "farmer" },
-            "add": { "component_groups": [ "farmer" ] }
-          },
-          // Transform fisherman zombie to fisherman villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "fisherman" },
-            "add": { "component_groups": [ "fisherman" ] }
-          },
-          // Transform shepherd zombie to shepherd villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "shepherd" },
-            "add": { "component_groups": [ "shepherd" ] }
-          },
-          // Transform fletcher zombie to fletcher villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "fletcher" },
-            "add": { "component_groups": [ "fletcher" ] }
-          },
-          // Transform librarian zombie to librarian villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "librarian" },
-            "add": { "component_groups": [ "librarian" ] }
-          },
-          // Transform cartographer zombie to cartographer villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "cartographer" },
-            "add": { "component_groups": [ "cartographer" ] }
-          },
-          // Transform cleric zombie to cleric villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "cleric" },
-            "add": { "component_groups": [ "cleric" ] }
-          },
-          // Transform armorer zombie to armorer villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "armorer" },
-            "add": { "component_groups": [ "armorer" ] }
-          },
-          // Transform weaponsmith zombie to weaponsmith villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "weaponsmith" },
-            "add": { "component_groups": [ "weaponsmith" ] }
-          },
-          // Transform toolsmith zombie to toolsmith villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "toolsmith" },
-            "add": { "component_groups": [ "toolsmith" ] }
-          },
-          // Transform butcher zombie to butcher villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "butcher" },
-            "add": { "component_groups": [ "butcher" ] }
-          },
-          // Transform leatherworker zombie to leatherworker villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "leatherworker" },
-            "add": { "component_groups": [ "leatherworker" ] }
-          },
-          // Transform mason zombie to mason villager
-          {
-            "filters": { "test": "is_family", "subject": "other", "value": "mason" },
-            "add": { "component_groups": [ "mason" ] }
-          },
-
-          // Transform desert zombie to desert villager
-          {
-            "filters": { "test": "is_mark_variant", "subject": "other", "value": 1 },
-            "add": { "component_groups": [ "desert_villager" ] }
-          },
-          // Transform jungle zombie to jungle villager
-          {
-            "filters": { "test": "is_mark_variant", "subject": "other", "value": 2 },
-            "add": { "component_groups": [ "jungle_villager" ] }
-          },
-          // Transform jungle zombie to jungle villager
-          {
-            "filters": { "test": "is_mark_variant", "subject": "other", "value": 3 },
-            "add": { "component_groups": [ "savanna_villager" ] }
-          },
-          // Transform jungle zombie to jungle villager
-          {
-            "filters": { "test": "is_mark_variant", "subject": "other", "value": 4 },
-            "add": { "component_groups": [ "snow_villager" ] }
-          },
-          // Transform jungle zombie to jungle villager
-          {
-            "filters": { "test": "is_mark_variant", "subject": "other", "value": 5 },
-            "add": { "component_groups": [ "swamp_villager" ] }
-          },
-          // Transform jungle zombie to jungle villager
-          {
-            "filters": { "test": "is_mark_variant", "subject": "other", "value": 6 },
-            "add": { "component_groups": [ "taiga_villager" ] }
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:skin_id" },
+            "sequence": [
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 0 },
+                "add": { "component_groups": [ "villager_skin_0" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 1 },
+                "add": { "component_groups": [ "villager_skin_1" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 2 },
+                "add": { "component_groups": [ "villager_skin_2" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 3 },
+                "add": { "component_groups": [ "villager_skin_3" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 4 },
+                "add": { "component_groups": [ "villager_skin_4" ] }
+              },
+              {
+                "filters": { "test": "is_skin_id", "subject": "other", "value": 5 },
+                "add": { "component_groups": [ "villager_skin_5" ] }
+              }
+            ]
           }
         ]
       },
@@ -717,6 +815,34 @@
                   ]
 
                 }
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_0" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_1" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_2" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_3" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_4" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_5" ] }
               }
             ]
           },

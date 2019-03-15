@@ -19,6 +19,12 @@
           "spawn_event": "minecraft:spawn_for_raid"
         }
       },
+      "minecraft:evoker_rider_for_raid": {
+        "minecraft:addrider": {
+          "entity_type": "minecraft:evocation_illager",
+          "spawn_event": "minecraft:spawn_for_raid"
+        }
+      },
       "minecraft:pillager_captain_rider": {
         "minecraft:addrider": {
           "entity_type": "minecraft:pillager",
@@ -64,11 +70,11 @@
           "sound_event": "attack.strong"
         },
         "minecraft:behavior.random_stroll": {
-          "priority": 5,
+          "priority": 6,
           "speed_multiplier": 0.4
         },
         "minecraft:behavior.look_at_player": {
-          "priority": 6,
+          "priority": 7,
           "look_distance": 6,
           "angle_of_view_horizontal": 45,
           "probability": 1
@@ -91,7 +97,8 @@
               "subject": "other",
               "operator": "!=",
               "value": "illager"
-            }
+            },
+            "max_dist": 64
           }
         },
         "minecraft:behavior.nearest_attackable_target": {
@@ -197,7 +204,7 @@
           },
           {
             // Default, large knockback case
-            "weight": 1 
+            "weight": 1
           }
         ]
       },
@@ -209,8 +216,8 @@
         "totalSupply": 15
       },
       "minecraft:collision_box": {
-        "height": 2.2,
-        "width": 1.95
+        "height": 1.9,
+        "width": 1.2
       },
       "minecraft:health": {
         "max": 100,
@@ -269,11 +276,15 @@
           "yellow_flower"
         ]
       },
+      "minecraft:follow_range": {
+        "value": 64
+      },
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": [
           "pillager",
-          "vindicator"
+          "vindicator",
+          "evocation_illager"
         ],
         "seats": {
           "position": [ 0.0, 2.1, -0.3 ]
@@ -299,6 +310,15 @@
         "add": {
           "component_groups": [
             "minecraft:hostile",
+            "minecraft:raid_configuration"
+          ]
+        }
+      },
+      "minecraft:spawn_for_raid_with_evoker_rider": {
+        "add": {
+          "component_groups": [
+            "minecraft:hostile",
+            "minecraft:evoker_rider_for_raid",
             "minecraft:raid_configuration"
           ]
         }

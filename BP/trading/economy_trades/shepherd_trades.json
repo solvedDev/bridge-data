@@ -9,7 +9,7 @@
             {
               "wants": [
                 {
-                  "item": "minecrat:wool:0",
+                  "item": "minecraft:wool:0",
                   "quantity": 18,
                   "price_multiplier": 0.05
                 }
@@ -27,7 +27,7 @@
             {
               "wants": [
                 {
-                  "item": "minecrat:wool:7",
+                  "item": "minecraft:wool:7",
                   "quantity": 18,
                   "price_multiplier": 0.05
                 }
@@ -45,7 +45,7 @@
             {
               "wants": [
                 {
-                  "item": "minecrat:wool:12",
+                  "item": "minecraft:wool:12",
                   "quantity": 18,
                   "price_multiplier": 0.05
                 }
@@ -63,7 +63,7 @@
             {
               "wants": [
                 {
-                  "item": "minecrat:wool:15",
+                  "item": "minecraft:wool:15",
                   "quantity": 18,
                   "price_multiplier": 0.05
                 }

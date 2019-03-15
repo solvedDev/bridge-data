@@ -31,6 +31,15 @@
       "minecraft:village_created": {
         "minecraft:behavior.defend_village_target": {
           "priority": 1
+        },
+        "minecraft:dweller": {
+          "dwelling_type": "village",
+          "dweller_role": "defender",
+          "update_interval_base": 60,
+          "update_interval_variant": 40,
+          "can_find_poi": false,
+          "can_migrate": true,
+          "first_founding_reward": 0
         }
       }
     },
@@ -44,15 +53,6 @@
       "minecraft:collision_box": {
         "width": 1.4,
         "height": 2.9
-      },
-      "minecraft:dweller": {
-        "dwelling_type": "village",
-        "dweller_role": "defender",
-        "update_interval_base": 60,
-        "update_interval_variant": 40,
-        "can_find_poi": false,
-        "can_migrate": true,
-        "first_founding_reward": 0
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/iron_golem.json"

@@ -448,7 +448,7 @@
       
       "work_schedule_villager": {
         "minecraft:behavior.work": {
-          "priority": 6,
+          "priority": 7,
           "active_time": 250,
           "speed_multiplier": 0.5,
           "goal_cooldown": 200,
@@ -465,7 +465,7 @@
 
       "work_schedule_fisher": {
         "minecraft:behavior.work": {
-          "priority": 6,
+          "priority": 7,
           "active_time": 250,
           "speed_multiplier": 0.5,
           "goal_cooldown": 200,
@@ -522,7 +522,7 @@
           ]
         },
         "minecraft:behavior.work": {
-          "priority": 6,
+          "priority": 7,
           "active_time": 250,
           "speed_multiplier": 0.5,
           "goal_cooldown": 200,
@@ -536,22 +536,14 @@
           }
         },
         "minecraft:behavior.harvest_farm_block": {
-          "priority": 7,
+          "priority": 8,
           "speed_multiplier": 0.5
         }
       },
 
       "work_schedule_librarian": {
-        "minecraft:behavior.inspect_bookshelf": {
-          "priority": 7,
-          "speed_multiplier": 0.6,
-          "search_range": 4,
-          "search_height": 3,
-          "goal_radius": 0.8,
-          "search_count": 0
-        },
         "minecraft:behavior.work": {
-          "priority": 6,
+          "priority": 7,
           "active_time": 250,
           "speed_multiplier": 0.5,
           "goal_cooldown": 200,
@@ -563,6 +555,14 @@
             "event": "minecraft:resupply_trades",
             "target": "self"
           }
+        },
+        "minecraft:behavior.inspect_bookshelf": {
+          "priority": 8,
+          "speed_multiplier": 0.6,
+          "search_range": 4,
+          "search_height": 3,
+          "goal_radius": 0.8,
+          "search_count": 0
         }
       },
 
@@ -575,7 +575,7 @@
 
       "gather_schedule_villager": {
         "minecraft:behavior.mingle": {
-          "priority": 6,
+          "priority": 7,
           "speed_multiplier": 0.5,
           "duration": 30,
           "cooldown_time": 10
@@ -588,7 +588,7 @@
 
       "bed_schedule_villager": {
         "minecraft:behavior.sleep": {
-          "priority": 2,
+          "priority": 3,
           "goal_radius": 1.5,
           "speed_multiplier": 0.6,
           "sleep_collider_height": 0.3,
@@ -601,7 +601,7 @@
 
       "wander_schedule_villager" : {
         "minecraft:behavior.explore_outskirts": {
-          "priority": 7,
+          "priority": 9,
           "explore_dist": 6.0,
           "wait_time": 200,
           "speed_multiplier": 0.6
@@ -709,7 +709,7 @@
           "value": 1
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -719,7 +719,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.farmer",
           "table": "trading/economy_trades/farmer_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -731,7 +732,7 @@
           "value": 2
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -741,7 +742,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.fisherman",
           "table": "trading/economy_trades/fisherman_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -753,7 +755,7 @@
           "value": 3
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -763,7 +765,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.shepherd",
           "table": "trading/economy_trades/shepherd_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -775,7 +778,7 @@
           "value": 4
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -785,7 +788,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.fletcher",
           "table": "trading/economy_trades/fletcher_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -797,7 +801,7 @@
           "value": 5
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -807,7 +811,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.librarian",
           "table": "trading/economy_trades/librarian_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -819,7 +824,7 @@
           "value": 6
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -829,7 +834,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.cartographer",
           "table": "trading/economy_trades/cartographer_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -841,7 +847,7 @@
           "value": 7
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -851,7 +857,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.cleric",
           "table": "trading/economy_trades/cleric_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -863,7 +870,7 @@
           "value": 8
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -873,7 +880,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.armor",
           "table": "trading/economy_trades/armorer_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -885,7 +893,7 @@
           "value": 9
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -895,7 +903,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.weapon",
           "table": "trading/economy_trades/weapon_smith_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -907,7 +916,7 @@
           "value": 10
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -917,7 +926,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.tool",
           "table": "trading/economy_trades/tool_smith_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -929,7 +939,7 @@
           "value": 11
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -939,7 +949,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.butcher",
           "table": "trading/economy_trades/butcher_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -951,7 +962,7 @@
           "value": 12
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -961,7 +972,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.leather",
           "table": "trading/economy_trades/leather_worker_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -973,7 +985,7 @@
           "value": 13
         },
         "minecraft:behavior.trade_interest": {
-          "priority": 1,
+          "priority": 5,
           "within_radius": 6.0,
           "interest_time": 45.0,
           "remove_item_time": 1.0,
@@ -983,7 +995,8 @@
         "minecraft:economy_trade_table": {
           "display_name": "entity.villager.mason",
           "table": "trading/economy_trades/stone_mason_trades.json",
-          "new_screen": true
+          "new_screen": true,
+          "persist_trades": true
         }
       },
 
@@ -1009,7 +1022,7 @@
           }
         },
         "minecraft:behavior.take_flower":{
-          "priority": 8
+          "priority": 9
         },
 
         "minecraft:preferred_path" : {
@@ -1099,10 +1112,10 @@
 
       "adult": {
         "minecraft:behavior.make_love": {
-          "priority": 3
+          "priority": 5
         },
         "minecraft:behavior.receive_love": {
-          "priority": 4
+          "priority": 6
         },
         "minecraft:preferred_path" : {
           "max_fall_blocks" : 1,
@@ -1188,6 +1201,43 @@
           ]
         }
       },
+
+      "villager_skin_0": {
+        "minecraft:skin_id": {
+          "value": 0
+        }
+      },
+
+      "villager_skin_1": {
+        "minecraft:skin_id": {
+          "value": 1
+        }
+      },
+
+      "villager_skin_2": {
+        "minecraft:skin_id": {
+          "value": 2
+        }
+      },
+
+      "villager_skin_3": {
+        "minecraft:skin_id": {
+          "value": 3
+        }
+      },
+
+      "villager_skin_4": {
+        "minecraft:skin_id": {
+          "value": 4
+        }
+      },
+
+      "villager_skin_5": {
+        "minecraft:skin_id": {
+          "value": 5
+        }
+      },
+
       "desert_villager": {
         "minecraft:mark_variant": {
           "value": 1
@@ -1314,18 +1364,15 @@
         "poi_type": "bed",
         "duration": 30.0
       },
-      "minecraft:behavior.trade_with_player": {
-        "priority": 5
-      },
-      "minecraft:behavior.look_at_trading_player": {
-        "priority": 6
-      },
       "minecraft:behavior.panic": {
         "priority": 1,
         "speed_multiplier": 0.6
       },
+      "minecraft:behavior.trade_with_player": {
+        "priority": 2
+      },
       "minecraft:behavior.avoid_mob_type": {
-        "priority": 2,
+        "priority": 4,
         "entity_types": [
           {
             "filters": { 
@@ -1334,7 +1381,7 @@
                   { "test" : "is_family", "subject" : "other", "value" : "zombie_villager"},
                   { "test" : "is_family", "subject" : "other", "value" : "zombie_pigman"},
                   { "test" : "is_family", "subject" : "other", "value" : "illager"},
-				  { "test" : "is_family", "subject" : "other", "value" : "vex"}
+                  { "test" : "is_family", "subject" : "other", "value" : "vex"}
                 ]
             },
             "max_dist": 8,
@@ -1343,17 +1390,27 @@
           }
         ]
       },
+      "minecraft:behavior.pickup_items": {
+        "priority": 4,
+        "max_dist": 3,
+        "goal_radius": 2,
+        "speed_multiplier": 0.5
+      },
       "minecraft:behavior.move_indoors": {
-        "priority": 5,
+        "priority": 6,
         "speed_multiplier": 0.8,
         "timeout_cooldown": 8.0
       },
-      "minecraft:behavior.move_towards_restriction": {
-        "priority": 7,
-        "speed_multiplier": 0.6
+      "minecraft:behavior.look_at_trading_player": {
+        "priority": 7
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8,
+        "probability": 0.02
       },
       "minecraft:behavior.share_items": {
-        "priority": 4,
+        "priority": 9,
         "max_dist": 3,
         "goal_radius":  2.0,
         "speed_multiplier": 0.5,
@@ -1363,20 +1420,13 @@
           }
         ]
       },
-      "minecraft:behavior.pickup_items": {
-        "priority": 3,
-        "max_dist": 3,
-        "goal_radius": 2,
-        "speed_multiplier": 0.5
-      },
-      "minecraft:behavior.random_stroll": {
-        "priority": 8,
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 10,
         "speed_multiplier": 0.6
       },
-      "minecraft:behavior.look_at_player": {
-        "priority": 7,
-        "look_distance": 8,
-        "probability": 0.02
+      "minecraft:behavior.random_stroll": {
+        "priority": 10,
+        "speed_multiplier": 0.6
       },
 	    "minecraft:physics": {
       }
@@ -1415,6 +1465,35 @@
       },
       "minecraft:entity_spawned": {
         "sequence": [
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:skin_id" },
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_0" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_1" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_2" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_3" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_4" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_5" ] }
+              }
+            ]
+          },
           {
             "filters": {
               "test": "has_component",
@@ -1613,6 +1692,35 @@
             ]
           },
           {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:skin_id" },
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_0" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_1" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_2" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_3" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_4" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_5" ] }
+              }
+            ]
+          },
+          {
             "filters": { 
               "any_of": [
                 { "test": "has_biome_tag", "value": "desert" },
@@ -1744,6 +1852,30 @@
             "filters": { "test": "is_family", "subject": "other", "operator": "==", "value": "zombie_villager" }, 
             "sequence" : [
               {
+                  "filters": { "test": "is_skin_id", "subject": "other", "value": 0 },
+                  "add": { "component_groups": [ "villager_skin_0" ] }
+              },
+              {
+                  "filters": { "test": "is_skin_id", "subject": "other", "value": 1 },
+                  "add": { "component_groups": [ "villager_skin_1" ] }
+              },
+              {
+                  "filters": { "test": "is_skin_id", "subject": "other", "value": 2 },
+                  "add": { "component_groups": [ "villager_skin_2" ] }
+              },
+              {
+                  "filters": { "test": "is_skin_id", "subject": "other", "value": 3 },
+                  "add": { "component_groups": [ "villager_skin_3" ] }
+              },
+              {
+                  "filters": { "test": "is_skin_id", "subject": "other", "value": 4 },
+                  "add": { "component_groups": [ "villager_skin_4" ] }
+              },
+              {
+                  "filters": { "test": "is_skin_id", "subject": "other", "value": 5 },
+                  "add": { "component_groups": [ "villager_skin_5" ] }
+              },
+              {
                   "filters": { "test": "is_mark_variant", "subject": "other", "value": 1 },
                   "add": { "component_groups": [ "desert_villager" ] }
               },
@@ -1773,6 +1905,34 @@
            // Transform from v1 - > v2 to correct villager skin (mark var not set so test biome)
             "filters": { "test": "is_family", "subject": "other", "operator": "==", "value": "villager" }, 
             "sequence" : [
+              {
+                "randomize": [
+                  {
+                    "weight": 1,
+                    "add": { "component_groups": [ "villager_skin_0" ] }
+                  },
+                  {
+                    "weight": 1,
+                    "add": { "component_groups": [ "villager_skin_1" ] }
+                  },
+                  {
+                    "weight": 1,
+                    "add": { "component_groups": [ "villager_skin_2" ] }
+                  },
+                  {
+                    "weight": 1,
+                    "add": { "component_groups": [ "villager_skin_3" ] }
+                  },
+                  {
+                    "weight": 1,
+                    "add": { "component_groups": [ "villager_skin_4" ] }
+                  },
+                  {
+                    "weight": 1,
+                    "add": { "component_groups": [ "villager_skin_5" ] }
+                  }
+                ]
+              },
               {
                 "filters": { 
                   "any_of": [
@@ -1829,6 +1989,35 @@
 
       "minecraft:entity_born": {
         "sequence": [
+          {
+            "filters": { "test": "has_component", "operator": "!=", "value": "minecraft:skin_id" },
+            "randomize": [
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_0" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_1" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_2" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_3" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_4" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "villager_skin_5" ] }
+              }
+            ]
+          },
           {
             "add": { "component_groups": [ "baby", "unskilled", "child_schedule" ] }
           },
