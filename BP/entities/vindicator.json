@@ -24,6 +24,7 @@
           "priority": 2,
           "within_radius": 12,
           "must_see": true,
+          "must_see_forget_duration": 40.0,
           "entity_types": [
             {
               "filters": {
@@ -46,6 +47,7 @@
           "priority": 2,
           "within_radius": 12,
           "must_see": true,
+          "must_see_forget_duration": 40.0,
           "entity_types": [
             {
               "filters": {
@@ -111,6 +113,15 @@
         },
         "minecraft:loot": {
           "table": "loot_tables/entities/vindicator_raid.json"
+        },
+        "minecraft:navigation.walk": {
+          "can_path_over_water": true,
+          "can_pass_doors": true,
+          "can_break_doors": true
+        },
+        "minecraft:annotation.break_door": {
+          "break_time": 30,
+          "min_difficulty": "normal"
         }
       },
       "minecraft:illager_squad_captain": {

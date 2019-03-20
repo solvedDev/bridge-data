@@ -244,6 +244,9 @@
         }
       },
       "minecraft:physics": {
+      },
+      "minecraft:follow_range": {
+        "value": 64
       }
     },
 

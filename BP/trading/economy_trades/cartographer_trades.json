@@ -157,7 +157,7 @@
               "wants": [
                 {
                   "item": "minecraft:emerald",
-                  "quantity": 12,
+                  "quantity": 16,
                   "price_multiplier": 0.1
                 },
                 {

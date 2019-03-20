@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.11.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:player",
@@ -14,7 +14,8 @@
           "add_effects": [
             {
               "effect": "bad_omen",
-              "duration": 6000
+              "duration": 6000,
+              "display_on_screen_animation": true
             }
           ]
         },
@@ -47,6 +48,8 @@
     "components": {
       "minecraft:type_family": {
         "family": [ "player" ]
+      },
+      "minecraft:is_hidden_when_invisible": {
       },
       "minecraft:loot": {
         "table": "loot_tables/empty.json"

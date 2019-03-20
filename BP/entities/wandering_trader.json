@@ -38,6 +38,8 @@
       "minecraft:type_family": {
         "family": [ "wandering_trader" ]
       },
+      "minecraft:is_hidden_when_invisible": {
+      },
       "minecraft:timer": {
         "looping": false,
         "random_time_choices": [
