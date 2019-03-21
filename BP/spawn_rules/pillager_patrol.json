@@ -10,7 +10,6 @@
         "minecraft:mob_event_filter": {
           "event": "minecraft:pillager_patrols_event"
         },
-        "minecraft:is_persistent": {},
         "minecraft:world_age_filter": {
           "min": 6000
         },
@@ -54,13 +53,16 @@
             { "test": "has_biome_tag", "operator": "==", "value": "desert" },
             { "test": "has_biome_tag", "operator": "==", "value": "savanna" }
           ]
+        },
+        "minecraft:player_in_village_filter": {
+          "distance": 48,
+          "village_border_tolerance": 10
         }
       },
       {
         "minecraft:mob_event_filter": {
           "event": "minecraft:pillager_patrols_event"
         },
-        "minecraft:is_persistent": {},
         "minecraft:world_age_filter": {
           "min": 6000
         },
@@ -100,13 +102,16 @@
             { "test": "has_biome_tag", "operator": "==", "value": "desert" },
             { "test": "has_biome_tag", "operator": "==", "value": "savanna" }
           ]
+        },
+        "minecraft:player_in_village_filter": {
+          "distance": 48,
+          "village_border_tolerance": 10
         }
       },
       {
         "minecraft:mob_event_filter": {
           "event": "minecraft:pillager_patrols_event"
         },
-        "minecraft:is_persistent": {},
         "minecraft:world_age_filter": {
           "min": 6000
         },
@@ -149,6 +154,10 @@
             { "test": "has_biome_tag", "operator": "==", "value": "desert" },
             { "test": "has_biome_tag", "operator": "==", "value": "savanna" }
           ]
+        },
+        "minecraft:player_in_village_filter": {
+          "distance": 48,
+          "village_border_tolerance": 10
         }
       }
     ]
