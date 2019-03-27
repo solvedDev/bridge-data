@@ -1,4 +1,4 @@
-<h1>ENTITIES DOCUMENTATION </br>Version: 1.11.0.7</h1>
+<h1>ENTITIES DOCUMENTATION </br>Version: 1.11.0.8</h1>
 This is documentation for a beta release of Minecraft. New features, components, and capabilities in this release are not final and might change without notice before the final release.<br/>Be sure to check the documentation once the release is out of beta if your add-on isn't working properly. Resource and Behavior Packs created for the beta are not guaranteed to work on the final release.<br/>
 <h2><p id="Index">Index</p></h2>
 <table border="1">
@@ -2947,7 +2947,7 @@ Allows the mob to attack the player by summoning other entities.</br><h2>Paramet
 
 <h1><p id="minecraft:behavior.mingle">minecraft:behavior.mingle</p></h1>
 
-Allows a villager to go to the village bell and mingle with other villagers</br><h2>Parameters</h2>
+Allows an entity to go to the village bell and mingle with other entities</br><h2>Parameters</h2>
 
 <table border="1" style="width:100%; border-style:solid; border-collapse:collapse; border-width:3;">
 <tr> <th style="border-style:solid; border-width:3;">Name</th> <th style="border-style:solid; border-width:3;">Type</th> <th style="border-style:solid; border-width:3;">Default Value</th> <th style="border-style:solid; border-width:3;">Description</th> </tr>
@@ -2967,7 +2967,19 @@ Allows a villager to go to the village bell and mingle with other villagers</br>
 <td style="border-style:solid; border-width:3; padding:7px">duration</td>
 <td style="border-style:solid; border-width:3; padding:7px">Decimal</td>
 <td style="border-style:solid; border-width:3; padding:7px">1.0</td>
-<td style="border-style:solid; border-width:3; padding:7px">Amount of time in seconds that the villager will chat with another villager</br></td>
+<td style="border-style:solid; border-width:3; padding:7px">Amount of time in seconds that the entity will chat with another entity</br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:3; padding:7px">mingle_partner_type</td>
+<td style="border-style:solid; border-width:3; padding:7px">List</td>
+<td style="border-style:solid; border-width:3; padding:7px">empty</td>
+<td style="border-style:solid; border-width:3; padding:7px">The entity type that this entity is allowed to mingle with</br></td>
+</tr>
+<tr>
+<td style="border-style:solid; border-width:3; padding:7px">mingle_distance</td>
+<td style="border-style:solid; border-width:3; padding:7px">Decimal</td>
+<td style="border-style:solid; border-width:3; padding:7px">2.0f</td>
+<td style="border-style:solid; border-width:3; padding:7px">The distance from its partner that this entity will mingle. If the entity type is not the same as the entity, this value needs to be identical on both entities.</br></td>
 </tr>
 </table>
 <a href="#Index">Back to top</a><br><br>

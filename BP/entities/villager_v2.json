@@ -19,6 +19,176 @@
           "delay": 0.5
         }
       },
+
+      // farmer villager
+      "prefer_farmer": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "farmer",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // fisherman villager
+      "prefer_fisherman": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "fisherman",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // shepherd villager
+      "prefer_shepherd": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "shepherd",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // fletcher villager
+      "prefer_fletcher": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "fletcher",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // librarian villager
+      "prefer_librarian": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "librarian",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // cartographer villager
+      "prefer_cartographer": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "cartographer",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // cleric villager
+      "prefer_cleric": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "cleric",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // armorer villager
+      "prefer_armorer": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "armorer",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // weaponsmith villager
+      "prefer_weaponsmith": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "weaponsmith",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // toolsmith villager
+      "prefer_toolsmith": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "toolsmith",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // butcher villager
+      "prefer_butcher": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "butcher",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // leatherworker villager
+      "prefer_leatherworker": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "leatherworker",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
+      // mason villager
+      "prefer_mason": {
+        "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "inhabitant",
+        "preferred_profession": "mason",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": true,
+        "can_migrate": true,
+        "first_founding_reward": 5
+        }
+      },
       
       "work_schedule": {
         "minecraft:scheduler": {
@@ -578,7 +748,9 @@
           "priority": 7,
           "speed_multiplier": 0.5,
           "duration": 30,
-          "cooldown_time": 10
+          "cooldown_time": 10,
+          "mingle_partner_type": "minecraft:villager_v2",
+          "mingle_distance": 2.0
         }
       },
 
@@ -1515,55 +1687,55 @@
                     "randomize": [
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "farmer", "behavior_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "farmer", "behavior_peasant", "basic_schedule", "prefer_farmer" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "fisherman", "behavior_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "fisherman", "behavior_peasant", "basic_schedule", "prefer_fisherman" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "shepherd", "behavior_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "shepherd", "behavior_peasant", "basic_schedule", "prefer_shepherd" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "fletcher", "behavior_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "fletcher", "behavior_peasant", "basic_schedule", "prefer_fletcher" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "librarian", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "librarian", "behavior_non_peasant", "basic_schedule", "prefer_librarian" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "cartographer", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "cartographer", "behavior_non_peasant", "basic_schedule", "prefer_cartographer" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "cleric", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "cleric", "behavior_non_peasant", "basic_schedule", "prefer_cleric" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "armorer", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "armorer", "behavior_non_peasant", "basic_schedule", "prefer_armorer" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "weaponsmith", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "weaponsmith", "behavior_non_peasant", "basic_schedule", "prefer_weaponsmith" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "toolsmith", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "toolsmith", "behavior_non_peasant", "basic_schedule", "prefer_toolsmith" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "butcher", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "butcher", "behavior_non_peasant", "basic_schedule", "prefer_butcher" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "leatherworker", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "leatherworker", "behavior_non_peasant", "basic_schedule", "prefer_leatherworker" ] }
                       },
                       {
                         "weight": 1,
-                        "add": { "component_groups": [ "mason", "behavior_non_peasant", "basic_schedule" ] }
+                        "add": { "component_groups": [ "mason", "behavior_non_peasant", "basic_schedule", "prefer_mason" ] }
                       },
                       {
                         "weight": 1,
@@ -2057,22 +2229,27 @@
         "randomize": [
           {
             "weight": 5,
-            "add": { "component_groups": [ "farmer", "adult", "behavior_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "farmer", "adult", "behavior_peasant", "basic_schedule", "prefer_farmer" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           },
           {
             "weight": 5,
-            "add": { "component_groups": [ "fisherman", "adult", "behavior_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "fisherman", "adult", "behavior_peasant", "basic_schedule", "prefer_fisherman" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           },
           {
             "weight": 5,
-            "add": { "component_groups": [ "shepherd", "adult", "behavior_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "shepherd", "adult", "behavior_peasant", "basic_schedule", "prefer_shepherd" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           },
           {
             "weight": 5,
-            "add": { "component_groups": [ "fletcher", "adult", "behavior_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "fletcher", "adult", "behavior_peasant", "basic_schedule", "prefer_fletcher" ] },
+            "remove": { "component_groups": [ "baby", "child_schedule" ] }
+          },
+          {
+            "weight": 5,
+            "add": { "component_groups": [ "mason", "adult", "behavior_non_peasant", "work_schedule", "prefer_mason" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           }
         ]
@@ -2082,19 +2259,19 @@
         "randomize": [
           {
             "weight": 20,
-            "add": { "component_groups": [ "librarian", "adult", "behavior_non_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "librarian", "adult", "behavior_non_peasant", "basic_schedule", "prefer_librarian" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           },
           {
             "weight": 20,
-            "add": { "component_groups": [ "cartographer", "behavior_non_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "cartographer", "behavior_non_peasant", "basic_schedule", "prefer_cartographer" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           }
         ]
       },
       
       "minecraft:spawn_cleric": {
-        "add": { "component_groups": [ "cleric", "adult", "behavior_non_peasant", "basic_schedule" ] },
+        "add": { "component_groups": [ "cleric", "adult", "behavior_non_peasant", "basic_schedule", "prefer_cleric" ] },
         "remove": { "component_groups": [ "baby", "child_schedule" ] }
       },
       
@@ -2102,17 +2279,17 @@
         "randomize": [
           {
             "weight": 6,
-            "add": { "component_groups": [ "armorer", "adult", "behavior_non_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "armorer", "adult", "behavior_non_peasant", "basic_schedule", "prefer_armorer" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           },
           {
             "weight": 6,
-            "add": { "component_groups": [ "weaponsmith", "adult", "behavior_non_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "weaponsmith", "adult", "behavior_non_peasant", "basic_schedule", "prefer_weaponsmith" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           },
           {
             "weight": 6,
-            "add": { "component_groups": [ "toolsmith", "adult", "behavior_non_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "toolsmith", "adult", "behavior_non_peasant", "basic_schedule", "prefer_toolsmith" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           }
         ]
@@ -2122,17 +2299,12 @@
         "randomize": [
           {
             "weight": 10,
-            "add": { "component_groups": [ "butcher", "adult", "behavior_non_peasant", "basic_schedule" ] },
+            "add": { "component_groups": [ "butcher", "adult", "behavior_non_peasant", "basic_schedule", "prefer_butcher" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           },
           {
             "weight": 10,
-            "add": { "component_groups": [ "leatherworker", "adult", "behavior_non_peasant", "basic_schedule" ] },
-            "remove": { "component_groups": [ "baby", "child_schedule" ] }
-          },
-          {
-            "weight": 10,
-            "add": { "component_groups": [ "mason", "adult", "behavior_non_peasant", "work_schedule" ] },
+            "add": { "component_groups": [ "leatherworker", "adult", "behavior_non_peasant", "basic_schedule", "prefer_leatherworker" ] },
             "remove": { "component_groups": [ "baby", "child_schedule" ] }
           }
         ]
