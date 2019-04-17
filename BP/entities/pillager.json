@@ -161,7 +161,7 @@
     "components": {
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 1.95
+        "height": 1.9
       },
       "minecraft:type_family": {
         "family": [ "pillager", "monster", "illager" ]

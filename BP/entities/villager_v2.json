@@ -1960,62 +1960,67 @@
               // Transform to farmer villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "farmer"},
-                  "add": { "component_groups": [ "farmer", "behavior_peasant", "farmer_schedule" ] }
+                  "add": { "component_groups": [ "farmer", "behavior_peasant", "farmer_schedule", "prefer_farmer" ] }
               },
               // Transform to fisherman villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "fisherman"},
-                  "add": { "component_groups": [ "fisherman", "behavior_peasant", "fisher_schedule" ] }
+                  "add": { "component_groups": [ "fisherman", "behavior_peasant", "fisher_schedule", "prefer_fisherman" ] }
               },
               // Transform to shepherd villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "shepherd" },
-                  "add": { "component_groups": [ "shepherd", "behavior_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "shepherd", "behavior_peasant", "work_schedule", "prefer_shepherd" ] }
               },
               // Transform to fletcher villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "fletcher" },
-                  "add": { "component_groups": [ "fletcher", "behavior_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "fletcher", "behavior_peasant", "work_schedule", "prefer_fletcher" ] }
               },
               // Transform to librarian villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "librarian" },
-                  "add": { "component_groups": [ "librarian", "behavior_non_peasant", "librarian_schedule" ] }
+                  "add": { "component_groups": [ "librarian", "behavior_non_peasant", "librarian_schedule" , "prefer_librarian"] }
               },
               // Transform to cartographer villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "cartographer" },
-                  "add": { "component_groups": [ "cartographer", "behavior_non_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "cartographer", "behavior_non_peasant", "work_schedule", "prefer_cartographer" ] }
               },
               // Transform to cleric villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "cleric" },
-                  "add": { "component_groups": [ "cleric", "behavior_non_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "cleric", "behavior_non_peasant", "work_schedule", "prefer_cleric" ] }
               },
               // Transform to armorer villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "armorer" },
-                  "add": { "component_groups": [ "armorer", "behavior_non_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "armorer", "behavior_non_peasant", "work_schedule", "prefer_armorer" ] }
               },
               // Transform to weaponsmith villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "weaponsmith" },
-                  "add": { "component_groups": [ "weaponsmith", "behavior_non_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "weaponsmith", "behavior_non_peasant", "work_schedule", "prefer_weaponsmith" ] }
               },
               // Transform to toolsmith villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "toolsmith" },
-                  "add": { "component_groups": [ "toolsmith", "behavior_non_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "toolsmith", "behavior_non_peasant", "work_schedule", "prefer_toolsmith" ] }
               },
               // Transform to butcher villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "butcher" },
-                  "add": { "component_groups": [ "butcher", "behavior_non_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "butcher", "behavior_non_peasant", "work_schedule", "prefer_butcher" ] }
               },
               // Transform to leatherworker villager
               {
                   "filters": { "test": "is_family", "subject": "other", "value": "leatherworker" },
-                  "add": { "component_groups": [ "leatherworker", "behavior_non_peasant", "work_schedule" ] }
+                  "add": { "component_groups": [ "leatherworker", "behavior_non_peasant", "work_schedule", "prefer_leatherworker" ] }
+              },
+              // Transform to mason villager
+              {
+                  "filters": { "test": "is_family", "subject": "other", "value": "mason" },
+                  "add": { "component_groups": [ "mason", "behavior_non_peasant", "work_schedule", "prefer_mason" ] }
               }
             ]
           },

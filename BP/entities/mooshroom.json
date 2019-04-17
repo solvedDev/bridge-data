@@ -21,7 +21,7 @@
           "value":0.5
         },
         "minecraft:ageable": {
-          "threshold": 1200,
+          "duration": 1200,
           "feedItems": "wheat",
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
