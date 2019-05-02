@@ -3155,18 +3155,18 @@
           }
         },
         {
-        "leak_memory@settings_common.option_text_edit_with_text_button": {
-          "$option_label": "Leak Memory",
-          "$option_binding_name": "#leak_memory_value",
-          "$option_enabled_binding_name": "#leak_memory_enabled",
-          "$max_text_edit_length": 4,
-          "$text_edit_box_text_type": "NumberChars",
-          "$option_text_edit_control_size": [ "50%", "100%" ],
-          "$text_box_name": "leak_memory_text_box",
-          "$button_text": "Leak Memory",
-          "$pressed_button_name": "button.leak_memory"
-        }
-      },
+          "leak_memory@settings_common.option_text_edit_with_text_button": {
+            "$option_label": "Leak Memory",
+            "$option_binding_name": "#leak_memory_value",
+            "$option_enabled_binding_name": "#leak_memory_enabled",
+            "$max_text_edit_length": 4,
+            "$text_edit_box_text_type": "NumberChars",
+            "$option_text_edit_control_size": [ "50%", "100%" ],
+            "$text_box_name": "leak_memory_text_box",
+            "$button_text": "Leak Memory",
+            "$pressed_button_name": "button.leak_memory"
+          }
+        },
         {
           "option_toggle_build_info@settings_common.option_toggle": {
             "$option_label": "options.dev_showBuildInfo",
@@ -3266,22 +3266,22 @@
           }
         },
         {
-        "dev_disable_client_blob_cache_toggle@settings_common.option_toggle": {
-          "$option_label": "options.dev_disable_client_blob_cache",
-          "$option_binding_name": "#dev_disable_client_blob_cache",
-          "$option_enabled_binding_name": "#dev_disable_client_blob_cache_enabled",
-          "$toggle_name": "dev_disable_client_blob_cache"
-        }
-      },
-      {
-        "dev_force_client_blob_cache_toggle@settings_common.option_toggle": {
-          "$option_label": "options.dev_force_client_blob_cache",
-          "$option_binding_name": "#dev_force_client_blob_cache",
-          "$option_enabled_binding_name": "#dev_force_client_blob_cache_enabled",
-          "$toggle_name": "dev_force_client_blob_cache"
-        }
-      },
-      {
+          "dev_disable_client_blob_cache_toggle@settings_common.option_toggle": {
+            "$option_label": "options.dev_disable_client_blob_cache",
+            "$option_binding_name": "#dev_disable_client_blob_cache",
+            "$option_enabled_binding_name": "#dev_disable_client_blob_cache_enabled",
+            "$toggle_name": "dev_disable_client_blob_cache"
+          }
+        },
+        {
+          "dev_force_client_blob_cache_toggle@settings_common.option_toggle": {
+            "$option_label": "options.dev_force_client_blob_cache",
+            "$option_binding_name": "#dev_force_client_blob_cache",
+            "$option_enabled_binding_name": "#dev_force_client_blob_cache_enabled",
+            "$toggle_name": "dev_force_client_blob_cache"
+          }
+        },
+        {
           "devquality_dropdown@settings_common.option_dropdown": {
             "$option_label": "options.dev_connection_quality",
             "$dropdown_content": "general_section.dev_quality_dropdown_content",
@@ -3313,6 +3313,14 @@
         },
         {
           "date_options_panel@general_section.date_options_panel": {}
+        },
+        {
+          "option_toggle_display_marketplace_document_id@settings_common.option_toggle": {
+            "$option_label": "options.dev_displayMarketplaceDocumentId",
+            "$option_binding_name": "#dev_show_doc_id",
+            "$option_enabled_binding_name": "#dev_show_doc_id_enabled",
+            "$toggle_name": "dev_show_doc_id"
+          }
         },
         {
           "version_options_panel": {
