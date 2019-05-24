@@ -1857,17 +1857,7 @@
                 "$option_enabled_binding_name": "#vr_hands_visible_enabled",
                 "$toggle_name": "vr_hands_visible"
               }
-            },
-            {
-              "dev_show_latency_graph_toggle@settings_common.option_toggle": {
-                "ignored": "($is_mobile_vr and $is_publish)",
-                "$option_label": "options.vrRollTurning",
-                "$option_binding_name": "#vr_roll_turn",
-                "$option_enabled_binding_name": "#vr_roll_turn_enabled",
-                "$toggle_name": "vr_roll_turn"
-              }
             }
-
           ]
         }
       }

@@ -2598,7 +2598,7 @@
       {
         "game_tip@game_tip.game_tip_panel": {
           "layer": 14,
-          "offset": [ 0, "95px" ]
+          "offset": [ 0, "80%" ]
         }
       },
       { "selected_item_details_factory@common.selected_item_details_factory": {} }

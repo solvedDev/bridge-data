@@ -230,10 +230,9 @@
     "anchor_from": "bottom_middle",
     "anchor_to": "top_middle",
     "text": "#text",
-    "size": [ "100%", 20 ],
+    "size": [ "100%", 10 ],
     "text_alignment": "center",
     "color": "$title_text_color",
-    "offset": [ 0, -8 ],
 
     "bindings": [
       {
@@ -265,10 +264,6 @@
         "map_image_panel@cartography.map_image_panel": {
           "anchor_from": "center",
           "anchor_to": "center"
-        }
-      },
-      {
-        "output_description_label@cartography.output_description_label": {
         }
       },
       {
@@ -356,6 +351,7 @@
           ]
         }
       },
+      { "output_description_label@cartography.output_description_label": {} },
       {
         "padding5": {
           "type": "panel",

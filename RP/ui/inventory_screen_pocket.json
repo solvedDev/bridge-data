@@ -1257,7 +1257,7 @@
       {
         "game_tip@game_tip.game_tip_panel": {
           "layer": 14,
-          "offset": [ 0, "-80px" ]
+          "offset": [ 0, "10%" ]
         }
       },
       {

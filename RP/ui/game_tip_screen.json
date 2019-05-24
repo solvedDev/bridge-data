@@ -22,7 +22,8 @@
     "color": "$body_text_color",
     "text": "#text",
     "$tip_min_size|default": [ "default", "default" ],
-    "size": "$tip_min_size",
+    "size": [ "default", "default" ],
+    "min_size": "$tip_min_size",
     "$tip_max_size|default": [ 165, 27 ],
     "max_size": "$tip_max_size",
     "$animation|default": [
@@ -40,7 +41,7 @@
         "info_bulb": {
           "type": "image",
           "layer": 13,
-          "size": [ 12, 14 ],
+          "size": [ 15, 19 ],
           "texture": "textures/ui/infobulb"
         }
       },
@@ -54,14 +55,12 @@
         "label_panel": {
           "type": "stack_panel",
           "orientation": "vertical",
-          "anchor_from": "center",
-          "anchor_to": "center",
           "size": [ "100%c", "100%c" ],
           "controls": [
             {
               "padding_vertical": {
                 "type": "panel",
-                "size": [ 0, 2 ]
+                "size": [ 0, 3 ]
               }
             },
             { "label@game_tip.game_tip_label": {} },
@@ -82,6 +81,7 @@
     "texture": "textures/ui/greyBorder",
     "layer": 1,
     "size": [ "100%c + 8px", "100%c" ],
+    "$tip_anchor_from|default": "center",
     "$fill_alpha|default": 0.6,
     "variables": [
       {
@@ -89,6 +89,8 @@
         "$fill_alpha": 1.0
       }
     ],
+    "anchor_from": "$tip_anchor_from",
+    "anchor_to": "$tip_anchor_from",
     "alpha": "$fill_alpha",
     "controls": [
       {
@@ -255,20 +257,17 @@
     "$is_recipe|default": false,
     "$ignore_chevron|default": false,
     "$ignore_tip|default": false,
+    "$up_enabled|default": false,
+    "$is_recipe_book_tip|default": false,
     "variables": [
       {
         "requires": "$up_enabled",
-        "$offset_value": [ 0, -30 ],
+        "$offset_value": [ 0, -24 ],
         "$chevron_texture": "textures/ui/down_tip_Chevron",
-        "$chevron_offset": [ 0, 16 ]
+        "$chevron_offset": [ 0, 12 ]
       },
       {
-        "requires": "($up_enabled and $is_multiline)",
-        "$offset_value": [ 0, -40 ],
-        "$chevron_offset": [ 0, 25 ]
-      },
-      {
-        "requires": "(($is_close or $is_recipe) and (not $up_enabled))",
+        "requires": "(not $up_enabled and ($is_recipe or $is_close))",
         "$chevron_offset": [ 0, -13 ]
       },
       {
@@ -277,23 +276,18 @@
         "$chevron_offset": [ 0, -17 ]
       },
       {
-        "requires": "((not $up_enabled and $is_recipe) and $pocket_screen)",
+        "requires": "((not $up_enabled and $is_recipe or $is_close)) and $pocket_screen)",
         "$offset_value": [ 0, "100%" ],
         "$chevron_offset": [ 0, "-60%" ]
       },
       {
         "requires": "($up_enabled and $pocket_screen)",
-        "$offset_value": [ 0, -31 ],
-        "$chevron_offset": [ 0, 11 ]
+        "$offset_value": [ 0, -38 ],
+        "$chevron_offset": [ 0, 17 ]
       },
       {
-        "requires": "($up_enabled and $pocket_screen and $is_multiline)",
-        "$offset_value": [ 0, -35 ],
-        "$chevron_offset": [ 0, 20 ]
-      },
-      {
-        "requires": "(($is_close) and $pocket_screen)",
-        "$chevron_offset": [ 0, -20 ]
+        "requires": "(($is_recipe_book_tip) and $pocket_screen)",
+        "$offset_value": [ 0, 50 ]
       }
     ],
     "offset": "$offset_value",
@@ -317,85 +311,56 @@
   },
 
   "inventory_tip_horizontal_panel": {
-    "type": "stack_panel",
-    "orientation": "horizontal",
+    "type": "panel",
     "$is_recipe_book_tip|default": false,
     "layer": 13,
     "$animation": [],
     "controls": [
       {
-        "recipe_left_enabled": {
-         "type": "panel",
-         "$recipe_left_padding_size": [ 140, 0 ],
-         "variables": [
-           {
-             "requires": "(($is_recipe and $game_pad) and $pocket_screen)",
-             "$recipe_left_padding_size": [ 132, 0 ]
-           }
-         ],
-         "size": "$recipe_left_padding_size",
-          "bindings": [
-            {
-              "binding_name": "#recipe_left_enabled",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
-      },
-      {
-        "left_enabled": {
-          "type": "panel",
-          "$left_padding_size": [ 100, 0 ],
-          "variables": [
-            {
-              "requires": "$is_recipe_book_tip",
-              "$left_padding_size": [ 108, 0 ]
-            },
-            {
-              "requires": "($is_recipe_book_tip and $pocket_screen)",
-              "$left_padding_size": [ 111, 0 ]
-            }
-          ],
-          "size": "$left_padding_size",
-          "bindings": [
-            {
-              "binding_name": "#left_enabled",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
-      },
-      {
         "inventory_tip@game_tip.game_tip_item_background": {
           "$fill_alpha": 1.0,
+          "$left_enabled|default": false,
+          "$right_enabled|default": false,
+          "$is_close|default": false,
+          "$is_recipe|default": false,
+          "$tip_min_size": [ 110, "default" ],
+          "$offset|default": [ 0, 0 ],
           "variables": [
             {
-              "requires": "$is_recipe_book_tip",
-              "$tip_max_size": [ 111, "default" ],
-              "$tip_min_size": [ 111, "default" ]
+              "requires": "($left_enabled)",
+              "$offset": [ 50, 0 ]
+            },
+            {
+              "requires": "($right_enabled)",
+              "$offset": [ -50, 0 ]
+            },
+            {
+              "requires": "($is_recipe and $pocket_screen)",
+              "$offset": [ 55, 0 ]
+            },
+            {
+              "requires": "($is_recipe_book_tip)",
+              "$tip_max_size": [ 106, "default" ],
+              "$tip_min_size": [ 106, "default" ],
+              "$offset": [ 54, 0 ]
             },
             {
               "requires": "($is_recipe_book_tip and $pocket_screen)",
-              "$tip_max_size": [ 125, "default" ],
-              "$tip_min_size": [ 125, "default" ]
+              "$tip_max_size": [ 76, "default" ],
+              "$tip_min_size": [ 76, "default" ],
+              "$offset": [ 50, 0 ]
             },
             {
               "requires": "$is_close",
               "$tip_max_size": [ 155, "default" ]
-            }
-          ]
-        }
-      },
-      {
-        "right_enabled": {
-          "size": [ 100, 0 ],
-          "type": "panel",
-          "bindings": [
+            },
             {
-              "binding_name": "#right_enabled",
-              "binding_name_override": "#visible"
+              "requires": "(($is_close or $is_recipe) and $pocket_screen)",
+              "$tip_max_size": [ 110, "default" ],
+              "$tip_min_size": [ 110, "default" ]
             }
-          ]
+          ],
+          "offset": "$offset"
         }
       }
     ]

@@ -67,10 +67,10 @@
 		"animation.parrot.flying" : {
 			"bones" : {
 				"leg0" : {
-					"rotation" : [ "math.cos(query.anim_time * 38.17) * 80.0", 0.0, 0.0 ]
+					"rotation" : [ "math.cos(query.anim_time * 38.17) * 80.0 * query.modified_move_speed", 0.0, 0.0 ]
 				},
 				"leg1" : {
-					"rotation" : [ "math.cos(query.anim_time * 38.17) * -80.0", 0.0, 0.0 ]
+					"rotation" : [ "math.cos(query.anim_time * 38.17) * -80.0 * query.modified_move_speed", 0.0, 0.0 ]
 				}
 			},
 			"loop" : true
