@@ -24,7 +24,7 @@
     "$tip_min_size|default": [ "default", "default" ],
     "size": [ "default", "default" ],
     "min_size": "$tip_min_size",
-    "$tip_max_size|default": [ 165, 27 ],
+    "$tip_max_size|default": [ 165, 36 ],
     "max_size": "$tip_max_size",
     "$animation|default": [
       "@game_tip.anim_game_tip_txt_wait"

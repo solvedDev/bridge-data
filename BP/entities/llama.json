@@ -23,7 +23,7 @@
               "growth": 0.1
             },
             {
-              "item": "tile.hay_block",
+              "item": "hay_block",
               "growth": 0.9
             }
           ],
@@ -63,7 +63,7 @@
               "target": "baby"
             }
           },
-          "breedItems": [ "tile.hay_block" ]
+          "breedItems": [ "hay_block" ]
         }
       },
 
@@ -160,7 +160,7 @@
               "temperMod": 3
             },
             {
-              "item": "tile.hay_block",
+              "item": "hay_block",
               "temperMod": 6
             }
           ],
@@ -340,7 +340,7 @@
             "heal_amount": 2
           },
           {
-            "item": "tile.hay_block",
+            "item": "hay_block",
             "heal_amount": 10
           }
         ]

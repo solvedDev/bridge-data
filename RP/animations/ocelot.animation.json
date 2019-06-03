@@ -12,23 +12,22 @@
 		"animation.ocelot.sit" : {
 			"bones" : {
 				"backlegl" : {
-					"position" : [ 0.0, "1.0 - this", "-2.0 - this" ],
+					"position" : [ 0.0, "-2.0 - this", "6.0 - this" ],
 					"rotation" : [ -45.0, 0.0, 0.0 ]
 				},
 				"backlegr" : {
-					"position" : [ 0.0, "1.0 - this", "-2.0 - this" ],
+					"position" : [ 0.0, "-2.0 - this", "6.0 - this" ],
 					"rotation" : [ "-45 - this", 0.0, 0.0 ]
 				},
 				"body" : {
-					"position" : [ 0.0, "-3.0 - this", "3.0 - this" ],
 					"rotation" : [ "-45 - this", 0.0, 0.0 ]
 				},
 				"frontlegl" : {
-					"position" : [ 0.0, "-4.5 - this", "-1.0 - this" ],
+					"position" : [ 0.0, "-1.5 - this", "-7.0 - this" ],
 					"rotation" : [ "42.15 - this", 0.0, 0.0 ]
 				},
 				"frontlegr" : {
-					"position" : [ 0.0, "-4.5 - this", "-1.0 - this" ],
+					"position" : [ 0.0, "-1.5 - this", "-7.0 - this" ],
 					"rotation" : [ "42.15 - this", 0.0, 0.0 ]
 				},
 				"tail1" : {
@@ -38,6 +37,9 @@
 				"tail2" : {
 					"position" : [ 0.0, 0.0, 0.0 ],
 					"rotation" : [ "45 - this", 0.0, 0.0 ]
+				},
+				"head" : {
+					"position" : [ 0.0, -2.0, 0.0 ]
 				}
 			},
 			"loop" : true

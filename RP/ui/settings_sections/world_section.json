@@ -595,17 +595,6 @@
         }
       },
       {
-        "respawn_radius@settings_common.option_text_edit": {
-          "$option_label": "createWorldScreen.respawnRadius",
-          "$option_binding_name": "#respawn_radius",
-          "$option_enabled_binding_name": "#respawn_radius_enabled",
-          "$text_box_name": "respawn_radius_text_box",
-          "$focus_override_right": "FOCUS_OVERRIDE_STOP",
-          "$max_text_edit_length": 8,
-          "$text_edit_box_text_type": "NumberChars"
-        }
-      },
-      {
         "experimental_gameplay_toggle@settings_common.option_toggle": {
           "$tts_section_header": "createWorldScreen.worldSettings",
           "ignored": "$education_edition",

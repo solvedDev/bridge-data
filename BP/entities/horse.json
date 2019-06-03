@@ -28,7 +28,7 @@
               "growth": 0.025
             },
             {
-              "item": "tile.hay_block",
+              "item": "hay_block",
               "growth": 0.15
             },
             {
@@ -203,7 +203,7 @@
             "golden_apple",
             "appleEnchanted",
             "golden_carrot",
-            "tile.hay_block",
+            "hay_block",
             "sugar",
             "bread",
             "wheat"
@@ -369,7 +369,7 @@
             "heal_amount": 1
           },
           {
-            "item": "tile.hay_block",
+            "item": "hay_block",
             "heal_amount": 20
           },
           {

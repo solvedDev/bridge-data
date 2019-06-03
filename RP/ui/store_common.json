@@ -1392,7 +1392,8 @@
         "coin_icon@common_store.coin_icon": {
           "anchor_from": "right_middle",
           "anchor_to": "right_middle",
-          "offset": [ -2, 0 ],
+          "$coin_icon_offset|default": [ -2, 0 ],
+          "offset": "$coin_icon_offset",
           "layer": 3
         }
       }
