@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:skeleton_horse",
@@ -62,8 +62,8 @@
       },
 
       "minecraft:lightning_immune": {
-        "minecraft:damage_sensor": [
-          {
+        "minecraft:damage_sensor": {
+          "triggers": {
             "on_damage": {
               "filters": {
                 "test": "is_family",
@@ -73,7 +73,7 @@
             },
             "deals_damage": false
           }
-        ]
+        }
       }
     },
 
@@ -82,13 +82,22 @@
         "family": [ "skeletonhorse", "undead" ]
       },
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0,
-        "breathesWater": true
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
       },
       "minecraft:health": {
         "value": 15,
         "max": 15
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:movement": {
         "value": 0.2
@@ -162,6 +171,10 @@
       "minecraft:is_tamed": {
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

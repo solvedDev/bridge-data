@@ -1,5 +1,5 @@
 {
-  "format_version": "1.12.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:turtle",
@@ -33,7 +33,7 @@
         },
         "minecraft:ageable": {
           "duration": 1200,
-          "feedItems": [
+          "feed_items": [
             "seagrass"
           ],
           "drop_items": [
@@ -61,17 +61,17 @@
           "table": "loot_tables/entities/sea_turtle.json"
         },
         "minecraft:breedable": {
-          "requireTame": false,
+          "require_tame": false,
           "causes_pregnancy": true,
-          "breedsWith": {
-            "mateType": "minecraft:turtle",
-            "babyType": "minecraft:turtle",
+          "breeds_with": {
+            "mate_type": "minecraft:turtle",
+            "baby_type": "minecraft:turtle",
             "breed_event": {
               "event": "minecraft:become_pregnant",
               "target": "self"
             }
           },
-          "breedItems": [
+          "breed_items": [
             "seagrass"
           ]
         },
@@ -121,16 +121,25 @@
 
     "components": {
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0,
-        "breathesWater": true,
-        "breathesAir": true,
-        "generatesBubbles": false
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true,
+        "breathes_air": true,
+        "generates_bubbles": false
       },
       "minecraft:nameable": {
       },
       "minecraft:health": {
         "value": 30
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:movement": {
         "value": 0.1
@@ -152,6 +161,10 @@
       "minecraft:jump.static": {
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       },
       "minecraft:home": {
       },

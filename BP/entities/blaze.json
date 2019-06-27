@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:blaze",
@@ -18,8 +18,11 @@
       "minecraft:attack": {
         "damage": 6
       },
-      "minecraft:fall_damage": {
-        "value": 0.0
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
       },
       "minecraft:movement": {
         "value": 0.23
@@ -41,12 +44,18 @@
         "value": 20,
         "max": 20
       },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_water_or_rain", "operator": "==", "value": true },
+            "cause": "drowning",
+            "damage_per_tick": 1
+          }
+        ]
+      },
       "minecraft:follow_range": {
         "value": 48,
         "max": 48
-      },
-      "minecraft:hurt_when_wet": {
-        "value": true
       },
       "minecraft:fire_immune": true,
       "minecraft:nameable": {
@@ -104,6 +113,10 @@
         "family": [ "blaze", "monster" ]
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

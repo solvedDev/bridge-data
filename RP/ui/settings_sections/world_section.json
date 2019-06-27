@@ -60,18 +60,48 @@
         }
       },
       {
-        "create_or_play_button@settings_common.action_button": {
-          "ignored": "(not $is_pregame)",
+        "play_or_create_panel": {
+          "type": "stack_panel",
           "size": [ "100%", 30 ],
-          "$button_text": "menu.play",
-          "default_focus_precedence": 1,
-          "$pressed_button_name": "play_world_button",
-          "$focus_override_up": "FOCUS_OVERRIDE_STOP",
-          "variables": {
-            "requires": "(not $is_world_edit)",
-            "$button_text": "createWorldScreen.create",
-            "$pressed_button_name": "create_world_button"
-          }
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "create_or_play_button@settings_common.action_button": {
+                "ignored": "(not $is_pregame)",
+                "size": [ "fill", 30 ],
+                "$button_text": "menu.play",
+                "default_focus_precedence": 1,
+                "$pressed_button_name": "play_world_button",
+                "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+                "variables": {
+                  "requires": "(not $is_world_edit)",
+                  "$button_text": "createWorldScreen.create",
+                  "$pressed_button_name": "create_world_button"
+                }
+              }
+            },
+            {
+              "play_on_realm_button@settings_common.action_button": {
+                "ignored": "(not $is_pregame)",
+                "size": [ "50%", 30 ],
+                "$button_text": "menu.playOnRealms",
+                "default_focus_precedence": 2,
+                "$pressed_button_name": "play_world_on_realm_button",
+                "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+                "variables": {
+                  "requires": "(not $is_world_edit)",
+                  "$button_text": "createWorldScreen.createOnRealms",
+                  "$pressed_button_name": "create_world_on_realm_button"
+                },
+                "bindings": [
+                  {
+                    "binding_name": "#create_on_realm_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
         }
       },
       {
@@ -83,7 +113,6 @@
       {
         "server_settings_visibility_panel": {
           "type": "stack_panel",
-
           "bindings": [
             {
               "binding_name": "#server_settings_visible",
@@ -121,6 +150,7 @@
       {
         "game_button@world_section.game_button": {
           "ignored": "($nx_os)",
+          "visible": "(not $education_edition_china)",
           "$toggle_group_forced_index": "$game_forced_index"
         }
       },
@@ -134,6 +164,7 @@
       },
       {
         "multiplayer_button@world_section.multiplayer_button": {
+          "visible": "(not $education_edition_china)",
           "$toggle_group_forced_index": "$multiplayer_forced_index"
         }
       }
@@ -143,6 +174,7 @@
   "addons_selector_panel": {
     "type": "stack_panel",
     "$tts_section_header": "options.category.addons",
+    "visible": "(not $education_edition_china)",
     "controls": [
       {
         "selector_group_label_2@settings_common.selector_group_label": {
@@ -1385,7 +1417,7 @@
       },
       {
         "platform_settings_dropdown@settings_common.option_dropdown": {
-          "ignored": "(not $nx_os)",
+          "ignored": "(not $nx_os and not $is_berwick)",
           "$show_option_label": true,
           "$option_label": "options.thirdPartyConsoleVisible",
           "$dropdown_content": "world_section.platform_broadcast_dropdown_content",
@@ -1396,7 +1428,7 @@
           "$dropdown_scroll_content_size": [ "100%", 60 ],
           "bindings": [
             {
-              "binding_name": "#can_be_nex_enabled",
+              "binding_name": "#can_be_platform_network_enabled",
               "binding_name_override": "#enabled"
             }
           ]
@@ -1414,7 +1446,7 @@
           "$dropdown_scroll_content_size": [ "100%", 60 ],
           "variables": [
             {
-              "requires": "$nx_os",
+              "requires": "($nx_os or $is_berwick)",
               "$option_label": "options.xboxliveBroadcastSettingsForCrossplatform",
               "$show_option_label": true
             }
@@ -1458,7 +1490,7 @@
       },
       {
         "platform_multiplayer_warning_label@world_section.cross_platform_warning_label": {
-          "ignored": "(not $nx_os)",
+          "ignored": "(not $nx_os and not $is_berwick)",
           "text": "#platform_multiplayer_warning_text",
           "bindings": [
             {

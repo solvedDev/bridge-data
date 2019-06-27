@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:sheep",
@@ -48,7 +48,7 @@
         },
         "minecraft:ageable": {
           "duration": 1200,
-          "feedItems": "wheat",
+          "feed_items": "wheat",
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -66,12 +66,12 @@
           "speed_multiplier": 1.0
         },
         "minecraft:breedable": {
-          "requireTame": false,
-          "breedsWith": {
-            "mateType": "minecraft:sheep",
-            "babyType": "minecraft:sheep"
+          "require_tame": false,
+          "breeds_with": {
+            "mate_type": "minecraft:sheep",
+            "baby_type": "minecraft:sheep"
           },
-          "breedItems": "wheat"
+          "breed_items": "wheat"
         }
       },
       "minecraft:sheep_dyeable": {
@@ -126,8 +126,8 @@
         "family": [ "sheep" ]
       },
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0
+        "total_supply": 15,
+        "suffocate_time": 0
       },
       "minecraft:collision_box": {
         "width": 0.9,
@@ -138,6 +138,15 @@
       "minecraft:health": {
         "value": 8,
         "max": 8
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:movement": {
         "value": 0.25
@@ -227,6 +236,10 @@
         "priority": 9
       },
 	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
     "events": {

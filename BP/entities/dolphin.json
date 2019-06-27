@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:dolphin",
@@ -28,7 +28,7 @@
         },
         "minecraft:ageable": {
           "duration": 1200,
-          "feedItems": [ "fish", "salmon" ],
+          "feed_items": [ "fish", "salmon" ],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -46,8 +46,8 @@
       "minecraft:dolphin_angry": {
         "minecraft:angry": {
           "duration": 25,
-          "broadcastAnger": true,
-          "broadcastRange": 16,
+          "broadcast_anger": true,
+          "broadcast_range": 16,
           "calm_event": {
             "event": "minecraft:on_calm",
             "target": "self"
@@ -58,8 +58,8 @@
       },
       "minecraft:dolphin_dried": {
         "minecraft:damage_over_time": {
-          "damagePerHurt": 1,
-          "timeBetweenHurt": 0
+          "damage_per_hurt": 1,
+          "time_between_hurt": 0
         }
       },
       "minecraft:dolphin_swimming_navigation": {
@@ -166,16 +166,25 @@
         "value": 10,
         "max": 10
       },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
       "minecraft:follow_range": {
         "value": 48,
         "max": 48
       },
       "minecraft:breathable": {
-        "totalSupply": 240,
-        "suffocateTime": 0,
-        "breathesAir": true,
-        "breathesWater": false,
-        "generatesBubbles": false
+        "total_supply": 240,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": false,
+        "generates_bubbles": false
       },
       "minecraft:attack": {
         "damage": 3
@@ -263,6 +272,10 @@
         "target": "self"
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

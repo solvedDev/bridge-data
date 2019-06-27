@@ -58,16 +58,25 @@
     "anchor_to": "top_left",
     "size": [ "100%-4px", "100%c" ],
     "offset": [ 2, 0 ],
-    "controls": [      
+    "controls": [
       {
         "realms_stack_panel": {
           "type": "stack_panel",
           "orientation": "vertical",
           "size": [ "100%", "100%c" ],
           "controls": [
-            
+
             {
               "realms_world_item_grid@choose_realm.realms_world_item_grid": {}
+            },
+            {
+              "padding": {
+                "type": "panel",
+                "size": [ "100%", 2 ]
+              }
+            },
+            {
+              "create_realm_button@choose_realm.create_new_realm_button": {}
             }
           ]
         }
@@ -123,6 +132,14 @@
         "binding_collection_name": "realms_collection"
       }
     ]
+  },
+
+  "create_new_realm_button@common_buttons.light_text_button": {
+    "$pressed_button_name": "button.menu_create_realm",
+    "$button_text": "selectTemplate.createRealm",
+    "size": [ "100%", 30 ],
+    "anchor_from": "center",
+    "anchor_to": "center"
   },
 
   "realms_world_content_panel": {

@@ -9,6 +9,7 @@
 				},
 				"eggbelly" : {
 					"position" : [ 0.0, -0.07999999821186066, 0.0 ],
+					"rotation" : [ "-this", 0.0, 0.0 ],
 					"scale" : "query.is_pregnant ? 1.0 : 0.0"
 				}
 			},

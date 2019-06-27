@@ -11,65 +11,6 @@
     "texture": "textures/ui/Black"
   },
 
-  "cancel_button@common_buttons.light_text_button": {
-    "$pressed_button_name": "button.download_cancel",
-    "$button_text": "gui.cancel"
-  },
-
-  "modal_progress_panel_with_cancel": {
-    "type": "panel",
-    "size": "$modal_screen_size",
-    "$background_fill_alpha|default": 0.8,
-    "controls": [
-      {
-        "common_panel@common.common_panel": {
-          "$dialog_background": "dialog_background_hollow_2",
-          "$fill_alpha": "$background_fill_alpha",
-          "$show_close_button": false
-        }
-      },
-      {
-        "content": {
-          "type": "panel",
-          "anchor_from": "top_left",
-          "anchor_to": "top_left",
-          // magic offset to make the scroll clipping perfect
-          "size": [ "100%-12px", "100%-60px" ],
-          "offset": [ 6, 20 ],
-          "controls": [
-            {
-              "title_panel@progress.title_panel": {}
-            },
-            {
-              "label": {
-                "type": "label",
-                "color": "$dark_button_default_text_color",
-                "size": [ "100% - 20px", "100% - 20px" ],
-                "anchor_from": "bottom_middle",
-                "anchor_to": "bottom_middle",
-                "layer": 1,
-                "shadow": false,
-                "text": "library.item.progress.body"
-              }
-            },
-            {
-              "progress_loading_bars@progress.progress_loading_bars": {}
-            }
-          ]
-        }
-      },
-      {
-        "cancel_button@library_item.cancel_button": {
-          "anchor_from": "bottom_middle",
-          "anchor_to": "bottom_middle",
-          "size": [ "40%", "20%" ],
-          "offset": [ 0, -8 ]
-        }
-      }
-    ]
-  },
-
-
   "scrolling_content": {
     "size": [ "100% - 2px", "100%c + 10px" ],
     "type": "panel",
@@ -353,32 +294,6 @@
     ]
   },
 
-  "modal_panel@common.input_panel": {
-    "layer": 201,
-    "size": [ "100%", "100%" ],
-    "button_mappings": [
-      {
-        "from_button_id": "button.menu_cancel",
-        "to_button_id": "button.download_cancel",
-        "mapping_type": "global"
-      }
-    ],
-    "bindings": [
-      {
-        "binding_name": "#download_in_progress",
-        "binding_name_override": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "downloading@library_item.modal_progress_panel_with_cancel": {
-          "layer": 1,
-          "$pressed_button_name": "button.download_cancel"
-        }
-      }
-    ]
-  },
-
   //--------------------------------------------------------------------------------
   // Screen
   //--------------------------------------------------------------------------------
@@ -399,7 +314,11 @@
   "screen_content": {
     "type": "panel",
     "controls": [
-      { "download_progress_panel@library_item.modal_panel": {} },
+      {
+        "download_progress_panel@edu_common.download_progress_modal_panel": {
+          "$body_text": "library.item.progress.body"
+        }
+      },
       {
         "header@common.fullscreen_header": {
           "$back_button_has_title": true,

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:ocelot",
@@ -17,7 +17,7 @@
         },
         "minecraft:ageable": {
           "duration": 1200,
-          "feedItems": [ "fish", "salmon" ],
+          "feed_items": [ "fish", "salmon" ],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -92,16 +92,16 @@
           ]
         },
         "minecraft:breedable": {
-          "requireTame": false,
-          "breedsWith": {
-            "mateType": "minecraft:ocelot",
-            "babyType": "minecraft:ocelot",
+          "require_tame": false,
+          "breeds_with": {
+            "mate_type": "minecraft:ocelot",
+            "baby_type": "minecraft:ocelot",
             "breed_event": {
               "event": "minecraft:entity_born",
               "target": "baby"
             }
           },
-          "breedItems": [ "fish", "salmon" ]
+          "breed_items": [ "fish", "salmon" ]
         }
       },
       // minecraft:ocelot_tame is only here for backwards compatibility purposes, ocelots are no longer tameable in Vanilla Minecraft
@@ -148,6 +148,15 @@
         "value": 10,
         "max": 10
       },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
       "minecraft:attack_damage": {
         "value": 4
       },
@@ -157,8 +166,8 @@
         "family": [ "ocelot" ]
       },
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0
+        "total_supply": 15,
+        "suffocate_time": 0
       },
       "minecraft:collision_box": {
         "width": 0.6,
@@ -179,8 +188,11 @@
       },
       "minecraft:can_climb": {
       },
-      "minecraft:fall_damage": {
-        "value": 0.0
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
       },
       "minecraft:behavior.float": {
         "priority": 0
@@ -246,6 +258,10 @@
         "priority": 9
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

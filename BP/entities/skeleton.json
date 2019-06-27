@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:skeleton",
@@ -9,12 +9,12 @@
     },
     "component_groups": {
       "minecraft:lightning_immune": {
-        "minecraft:damage_sensor": [
-          {
+        "minecraft:damage_sensor": {
+          "triggers": {
             "on_damage": { "filters": { "other_with_families": "lightning" } },
             "deals_damage": false
           }
-        ]
+        }
       },
       "minecraft:ranged_attack": {
         "minecraft:behavior.ranged_attack": {
@@ -65,15 +65,15 @@
     "components": {
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 1.95
+        "height": 1.9
       },
       "minecraft:type_family": {
         "family": [ "skeleton", "undead", "monster" ]
       },
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0,
-        "breathesWater": true
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
       },
 
       "minecraft:burns_in_daylight": {
@@ -82,6 +82,15 @@
       "minecraft:health": {
         "value": 20,
         "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/skeleton.json"
@@ -200,6 +209,10 @@
         "priority": 6
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

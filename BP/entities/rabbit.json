@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:rabbit",
@@ -17,7 +17,7 @@
         },
         "minecraft:ageable": {
           "duration": 1200,
-          "feedItems": [
+          "feed_items": [
             "golden_carrot",
             "carrot",
             "yellow_flower"
@@ -45,16 +45,16 @@
           "speed_multiplier": 1.0
         },
         "minecraft:breedable": {
-          "breedItems": [
+          "breed_items": [
             "golden_carrot",
             "carrot",
             "yellow_flower"
           ],
-          "breedsWith": {
-            "mateType": "minecraft:rabbit",
-            "babyType": "minecraft:rabbit"
+          "breeds_with": {
+            "mate_type": "minecraft:rabbit",
+            "baby_type": "minecraft:rabbit"
           },
-          "requireTame": false,
+          "require_tame": false,
           "mutation_factor": {
             "variant": 0.2
           }
@@ -88,8 +88,8 @@
       },
       
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0
+        "total_supply": 15,
+        "suffocate_time": 0
       },
       "minecraft:nameable": {
       },
@@ -97,6 +97,15 @@
       "minecraft:health": {
         "value": 3,
         "max": 3
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.67,
@@ -184,6 +193,10 @@
         "priority": 11
       },
 	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

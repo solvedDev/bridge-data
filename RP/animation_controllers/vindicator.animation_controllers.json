@@ -1,16 +1,13 @@
 {
-  "format_version": "1.8.0",
-  "animation_controllers": {
-    "controller.animation.vindicator.base": {
-      "states": {
-        "default": {
-          "animations": [
-            { "vindicator_base": [] },
-            { "vindicator_attack": [] },
-            { "vindicator_walk": [] }
-          ]
-        }
-      }
-    }
-  }
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.vindicator.base" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "vindicator_base", "vindicator_attack", "vindicator_walk" ]
+				}
+			}
+		}
+	}
 }

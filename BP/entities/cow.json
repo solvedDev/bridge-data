@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:cow",
@@ -16,7 +16,7 @@
         },
         "minecraft:ageable": {
           "duration": 1200,
-          "feedItems": "wheat",
+          "feed_items": "wheat",
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -38,11 +38,11 @@
           "speed_multiplier": 1.0
         },
         "minecraft:breedable": {
-          "requireTame": false,
-          "breedItems": "wheat",
-          "breedsWith": {
-            "mateType": "minecraft:cow",
-            "babyType": "minecraft:cow",
+          "require_tame": false,
+          "breed_items": "wheat",
+          "breeds_with": {
+            "mate_type": "minecraft:cow",
+            "baby_type": "minecraft:cow",
             "breed_event": {
               "event": "minecraft:entity_born",
               "target": "baby"
@@ -73,8 +73,8 @@
         "family": [ "cow" ]
       },
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0
+        "total_supply": 15,
+        "suffocate_time": 0
       },
       "minecraft:navigation.walk": {
         "can_path_over_water": true,
@@ -97,6 +97,15 @@
       "minecraft:health": {
         "value": 10,
         "max": 10
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:movement": {
         "value": 0.25
@@ -158,6 +167,10 @@
         }
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

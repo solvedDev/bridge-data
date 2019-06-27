@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:witch",
@@ -20,7 +20,8 @@
         },
         "minecraft:behavior.move_to_village": {
           "priority": 3,
-          "speed_multiplier": 1.2
+          "speed_multiplier": 1.2,
+          "goal_radius": 2.0
         },
         "minecraft:ambient_sound_interval": {
           "value": 2.0,
@@ -31,18 +32,26 @@
     },
     "components": {
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0
+        "total_supply": 15,
+        "suffocate_time": 0
       },
       "minecraft:nameable": {
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/witch.json"
       },
-
       "minecraft:health": {
         "value": 26,
         "max": 26
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:movement": {
         "value": 0.25
@@ -114,6 +123,10 @@
         "family": [ "witch", "monster" ]
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       },
       "minecraft:follow_range": {
         "value": 64

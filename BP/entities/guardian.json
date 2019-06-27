@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:guardian",
@@ -73,6 +73,15 @@
         "value": 30,
         "max": 30
       },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
       "minecraft:movement": {
         "value": 0.12
       },
@@ -98,7 +107,7 @@
       "minecraft:jump.static": {
       },
       "minecraft:breathable": {
-        "breathesWater": true
+        "breathes_water": true
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/guardian.json"
@@ -152,6 +161,10 @@
         "family": [ "guardian", "monster" ]
       },
 	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

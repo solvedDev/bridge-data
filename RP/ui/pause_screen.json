@@ -66,6 +66,10 @@
       {
         "requires": "$nx_os",
         "$visibility_binding_type": "none"
+      },
+      {
+        "requires": "$is_berwick",
+        "$visibility_binding_type": "none"
       }
     ],
     "bindings": [
@@ -78,7 +82,7 @@
   },
 
   "change_skin_button@common_buttons.light_glyph_button": {
-    "ignored": "$nx_os",
+    "ignored": "($nx_os or $is_berwick)",
     "size": [ 29, 26 ],
     "$pressed_button_name": "button.menu_skins",
     "anchor_from": "bottom_middle",
@@ -268,7 +272,7 @@
     "$button_text": "menu.howToPlay",
     "anchor_to": "top_middle",
     "anchor_from": "top_middle",
-    "ignored": "(not $education_edition)"
+    "ignored": "(not $education_edition or $education_edition_china)"
   },
 
   "feedback_button@pause.pause_button_template": {
@@ -755,11 +759,11 @@
         }
       },
       {
-        "disconnected_from_nex_label@pause.disconnected_label": {
+        "disconnected_from_third_party_label@pause.disconnected_label": {
           "text": "pauseScreen.thirdPartyConsoleDisconnect",
           "bindings": [
             {
-              "binding_name": "#disconnected_from_nex_label_visible",
+              "binding_name": "#disconnected_from_third_party_label_visible",
               "binding_name_override": "#visible",
               "binding_type": "global"
             }

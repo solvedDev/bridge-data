@@ -38,10 +38,10 @@
   "$main_header_text_color": [ 1.0, 1.0, 1.0 ],
   "$sub_header_text_color": [ 1.0, 1.0, 1.0 ],
 
-  "$tab_unchecked_text_color": [ 0.3, 0.3, 0.3 ],
-  "$tab_unchecked_hover_text_color": [ 0.3, 0.3, 0.3 ],
-  "$tab_unchecked_locked_text_color": [ 0.3, 0.3, 0.3 ],
-  "$tab_unchecked_locked_hover_text_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_unchecked_text_color": [ 0.6953, 0.6953, 0.6953 ],
+  "$tab_unchecked_hover_text_color": [ 0.6953, 0.6953, 0.6953 ],
+  "$tab_unchecked_locked_text_color": [ 0.6953, 0.6953, 0.6953 ],
+  "$tab_unchecked_locked_hover_text_color": [ 0.6953, 0.6953, 0.6953 ],
   "$tab_checked_text_color": [ 0.3, 0.3, 0.3 ],
   "$tab_checked_hover_text_color": [ 0.3, 0.3, 0.3 ],
   "$tab_checked_locked_text_color": [ 0.3, 0.3, 0.3 ],
@@ -131,11 +131,13 @@
   "$warning_text_color": [ 0.8, 0.7, 0.0 ],
   "$error_text_color": [ 1.0, 0.0, 0.0 ],
 
+  "$alert_label_text_color": [ 0.0, 0.0, 0.0 ],
+
   "$debug_store_text_color": [ 0.0, 1.0, 0.0 ],
 
   "$x_axis_text_color": [ 1.0, 0.0, 0.0 ],
   "$y_axis_text_color": [ 0.0, 1.0, 0.0 ],
-  "$z_axis_text_color": [ 0.0, 0.0, 1.0 ],
+  "$z_axis_text_color": [ 0.0, 0.6392, 1.0 ],
 
   "$book_page_number_color": [ 0.74, 0.64, 0.53 ],
   "$book_page_text_color": [ 0.0, 0.0, 0.0 ],
@@ -243,6 +245,13 @@
   //////// Panel colors ////////
   "$dark_panel_color": [ 0.5, 0.5, 0.5, 1.0 ],
 
+  //////// Name Tag colors ////////
+  "$alert_label_background_color": [ 1.0, 0.862, 0.086, 0.5 ],
+
+  //////// Dropdown item background colors ////////
+  "$dropdown_radio_background_unchecked_color": [ 0.43, 0.43, 0.43 ],
+  "$dropdown_radio_background_checked_color": [ 0.29, 0.29, 0.29 ],
+  "$dropdown_radio_background_hover_color": [ 0.12, 0.48, 0 ],
 
   //////// Chemistry colors ////////
   "$proton_color": [ 0.321, 0.486, 0.886, 1.0 ],
@@ -261,10 +270,37 @@
   "$store_dark_grey_text_color": [ 0.3, 0.3, 0.3 ],
   "$store_light_grey_text_color": [ 0.7, 0.7, 0.7 ],
   "$coin_bonus_price_color": [ 0.140625, 0.25, 0.3046875 ],
-  
+
   //////// Trade colors ////////
   "$trade_tier_name_color": [ 1.0, 1.0, 1.0 ],
   "$trade_tier_name_locked_color": [ 0.5, 0.5, 0.5 ],
   "$trade_lock_color": [ 0.0, 0.0, 0.0 ],
-  "$enchantment_button_default_text_color": [ 1.0, 0.8, 1.0 ]
+  "$enchantment_button_default_text_color": [ 1.0, 0.8, 1.0 ],
+
+  //////// Nested button variables ////////
+  "$nested_default_alpha": 1.0,
+  "$nested_default_color": [ 1.0, 1.0, 1.0 ],
+
+  "$nested_dark_content_default_color": [ 0.227, 0.227, 0.227 ],
+  "$nested_dark_content_hover_color": [ 0.29, 0.808, 0.29 ],
+  "$nested_dark_content_pressed_color": [ 0.216, 0.451, 0.216 ],
+  "$nested_dark_label_default_color": [ 0.114, 0.114, 0.114 ],
+  "$nested_dark_label_hover_color": [ 0.0, 0.227, 0.012 ],
+  "$nested_dark_label_pressed_color": [ 0.0, 0.227, 0.012 ],
+
+  "$nested_transparent_label_alpha": 0.8,
+  "$nested_transparent_label_default_color": [ 0.1, 0.1, 0.1 ],
+  "$nested_transparent_label_default_pressed_color": [ 0.05, 0.05, 0.05 ],
+
+  "$nested_transparent_green_label_color": [ 0.0, 0.451, 0.02 ],
+  "$nested_transparent_green_label_pressed_color": [ 0.0, 0.26, 0.0 ],
+
+  "$nested_transparent_purple_label_color": [ 0.247, 0.098, 0.616 ],
+  "$nested_transparent_purple_label_pressed_color": [ 0.179, 0.094, 0.389 ],
+
+  "$nested_content_unfocused_overlay_alpha": 0.5,
+  "$nested_overlay_clickable_alpha": 0.4,
+
+  "$nested_one_pixel_padding": [ "100%sm", 1 ],
+  "$nested_no_padding": [ "100%sm", 0 ]
 }

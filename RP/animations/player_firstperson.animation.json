@@ -1,0 +1,95 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.player.first_person.attack_rotation" : {
+			"bones" : {
+				"rightarm" : {
+					"position" : [ "-5.0 * variable.hand_attack_x_position", "variable.hand_attack_y_position * 8.75 - variable.first_person_rotation_factor * variable.attack_time * 15.0", "variable.hand_attack_z_position * 3.75" ],
+					"rotation" : [ "30.7 * math.sin(variable.first_person_rotation_factor * variable.attack_time * -180.0 - 45.0) * 1.5", "-15.0 * math.sin(variable.first_person_rotation_factor * variable.one_minus_attack_time * -100.0 + 10.0) * 4.75", "21.8 * math.sin(variable.first_person_rotation_factor * variable.attack_time * 200.0 + 30.0) * 1.25" ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.player.first_person.base_pose" : {
+			"bones" : {
+				"body" : {
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+				},
+				"rightarm" : {
+					"position" : [ 12.50, "-10.5 - (1.0 - variable.player_height) * 0.6", 12.0 ],
+					"rotation" : [ "80.0 + variable.is_using_vr * 7.5", "-50.0 + variable.is_using_vr * 7.5", "120.0 + variable.is_using_vr * -2.5" ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.player.first_person.crossbow_equipped" : {
+			"bones" : {
+				"leftarm" : {
+					"position" : [ "1.5 - variable.item_use_normalized * 3.5", -3.799999952316284, "8.25 - (1 - variable.item_use_normalized)" ],
+					"rotation" : [ 165.0, -60.0, 45.0 ],
+					"scale" : [ 0.4000000059604645, 0.4000000059604645, 0.4000000059604645 ]
+				}
+			},
+			"loop" : true,
+			"override_previous_animation" : true
+		},
+		"animation.player.first_person.map_hold" : {
+			"bones" : {
+				"leftarm" : {
+					"position" : [ "-16.250 + variable.is_vertical_splitscreen * 7.0", "-10.75 - variable.map_angle * 8.0 + variable.is_vertical_splitscreen * 0.6", "9.0 - variable.map_angle * 8.0" ],
+					"rotation" : [ 40.0, -20.0, -155.0 ],
+					"scale" : [ 1.149999976158142, 1.149999976158142, 1.149999976158142 ]
+				},
+				"rightarm" : {
+					"position" : [ "12.50 + variable.is_vertical_splitscreen * 1.75", "-7.5 - variable.map_angle * 8.0 + variable.is_vertical_splitscreen * 0.5", "5.25 - variable.map_angle * 8.0" ],
+					"rotation" : [ 77.50, 7.50, 160.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.player.first_person.map_hold_attack" : {
+			"bones" : {
+				"leftarm" : {
+					"position" : [ "variable.hand_attack_x_position * -10.75", "variable.hand_attack_y_position * 3.75 - variable.first_person_rotation_factor * variable.attack_time * 1.25", "variable.hand_attack_z_position * 5.75" ],
+					"rotation" : [ "variable.map_angle * 90", "-15.0 * math.sin(variable.first_person_rotation_factor * variable.one_minus_attack_time * -100.0)", 0.0 ]
+				},
+				"rightarm" : {
+					"position" : [ "variable.hand_attack_x_position * -6.25", "variable.hand_attack_y_position * 1.75", "variable.hand_attack_z_position * 5.25" ],
+					"rotation" : [ "variable.map_angle * 90.0", 0.0, 0.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.player.first_person.map_hold_main_hand" : {
+			"bones" : {
+				"rightarm" : {
+					"position" : [ "14.50 - variable.is_vertical_splitscreen * 0.75", "-8.25 + variable.hand_attack_y_position * 2.75 - variable.first_person_rotation_factor * variable.attack_time * 3.0 - variable.is_horizontal_splitscreen", "11.5 + variable.hand_attack_z_position * 3.5 + variable.is_horizontal_splitscreen * 3.5" ],
+					"rotation" : [ 195.0, 182.50, -5.0 ],
+					"scale" : [ 0.750, 0.750, 0.750 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.player.first_person.map_hold_off_hand" : {
+			"bones" : {
+				"leftarm" : {
+					"position" : [ "-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7", -8.250, "11.50 + variable.is_horizontal_splitscreen * 0.5" ],
+					"rotation" : [ 195.0, 182.50, 2.50 ],
+					"scale" : [ 0.750, 0.750, 0.750 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.player.first_person.walk" : {
+			"bones" : {
+				"leftarm" : {
+					"position" : [ "math.sin(-query.walk_distance * 180.0) * variable.hand_bob * 9.75", "-math.abs(math.cos(-query.walk_distance * 180.0)) * variable.hand_bob * 15.0", 0.0 ]
+				},
+				"rightarm" : {
+					"position" : [ "math.sin(-query.walk_distance * 180.0) * variable.hand_bob * 9.75", "-math.abs(math.cos(-query.walk_distance * 180.0)) * variable.hand_bob * 15.0", 0.0 ]
+				}
+			},
+			"loop" : true
+		}
+	}
+}

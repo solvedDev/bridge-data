@@ -865,6 +865,8 @@
     "endermite:entity_alphatest": {},
     "evoker:entity_alphatest": {},
     "fang:entity_alphatest": {},
+    "fishing_hook:entity_alphatest": {},
+    "fox:entity": {},
     "cat:entity_alphatest_change_color": {},
     "clownfish:entity_alphatest": {},
     "cod:entity_alphatest": {},
@@ -874,7 +876,7 @@
     "tropicalfish:entity_multitexture_multiplicative_blend": {},
     "ghast:entity_emissive_alpha": {},
     "guardian:entity_alphatest": {},
-    "horse:entity_multitexture_alpha_test_color_mask": {},
+    "horse:entity_multitexture_alpha_test": {},
     "horse_leather_armor:entity_multitexture_alpha_test_color_mask": {},
     "horse_saddle:entity_alphatest": {},
     "horse_hair:entity_alphatest": {},
@@ -955,6 +957,9 @@
     },
     "zombie_villager_v2_masked:entity_multitexture_masked": {
       "depthFunc": "LessEqual"
+    },
+    "player_animated:entity_alphatest": {
+      "+defines": [ "USE_UV_ANIM" ]
     }
   }
 }

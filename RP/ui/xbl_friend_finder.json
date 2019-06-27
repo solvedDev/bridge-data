@@ -209,7 +209,7 @@
     "$text_name": "xbox.profile.addFriend",
     "variables": [
       {
-        "requires": "$nx_os",
+        "requires": "($nx_os or $is_berwick)",
         "$text_name": "networkWorld.find_cross_platform_friends"
       }
     ]

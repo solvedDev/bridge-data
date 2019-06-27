@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:elder_guardian",
@@ -32,6 +32,15 @@
         "value": 80,
         "max": 80
       },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
       "minecraft:movement": {
         "value": 0.3
       },
@@ -46,7 +55,7 @@
         "max": 16
       },
       "minecraft:breathable": {
-        "breathesWater": true
+        "breathes_water": true
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 1,
@@ -88,6 +97,10 @@
         "family": [ "guardian_elder", "monster" ]
       },
 	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     }
   }

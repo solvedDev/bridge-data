@@ -1,0 +1,118 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.fox.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [
+         				"look_at_target",
+						{
+							"walk" : "query.modified_move_speed"
+						}
+					],
+					"transitions" : [
+						{
+							"crouch" : "query.is_stalking"
+						},
+						{
+							"sleep" : "query.is_sleeping"
+						},
+						{
+							"stuck" : "query.is_stunned"
+						},
+						{
+							"sit" : "query.is_sitting"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"crouch" : {
+					"animations" : [
+         				"look_at_target",
+						"crouch",
+						{
+							"walk" : "query.modified_move_speed"
+						} 
+					],
+					"transitions" : [
+						{
+							"default" : "!query.is_stalking && !query.is_interested"
+						},
+						{
+							"wiggle" : "query.is_interested"
+						}
+					],
+					"blend_transition": 0.4
+				},
+				"wiggle" : {
+					"animations" : [ 
+						"look_at_target",
+						"wiggle",
+						{
+							"walk" : "query.modified_move_speed"
+						} 
+					],
+					"transitions" : [
+						{
+							"default" : "query.is_on_ground && !query.is_interested && !query.is_stalking"
+						},
+						{
+							"crouch" : "query.is_on_ground && !query.is_interested && query.is_stalking"
+						},
+						{
+							"pounce" : "!query.is_on_ground"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"pounce" : {
+					"animations" : [ 
+						"look_at_target",
+						"pounce",
+						{
+							"walk" : "query.modified_move_speed"
+						}
+					],
+					"transitions" : [
+						{
+							"default" : "query.is_on_ground"
+						}
+					]
+				},
+				"stuck" : {
+					"animations" : [ 
+						"stuck",
+						{
+							"walk" : "math.cos(query.life_time * 20.0 * 53.7)"
+						} 
+					],
+					"transitions" : [
+						{
+							"default" : "!query.is_stunned"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"sleep" : {
+					"animations" : [ "sleep" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_sleeping"
+						}
+					],
+					"blend_transition": 0.2
+				},
+				"sit" : {
+					"animations" : [ "sit" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_sitting"
+						}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

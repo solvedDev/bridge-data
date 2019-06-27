@@ -4,7 +4,7 @@
 		"animation.pig.baby_transform" : {
 			"bones" : {
 				"head" : {
-					"position" : [ 0.0, 8.0, 4.0 ],
+					"position" : [ 0.0, 4.0, 4.0 ],
 					"scale" : 2.0
 				}
 			},

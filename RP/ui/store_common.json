@@ -1018,7 +1018,7 @@
   },
 
   "home_button_panel": {
-    "ignored": "$is_on_3p_server",
+    "ignored": "($is_on_3p_server or $ignore_home_button)",
     "type": "panel",
     "size": [ 19, "100%" ],
     "bindings": [
@@ -1045,7 +1045,7 @@
     "orientation": "horizontal",
     "type": "stack_panel",
     "size": [ "100%c", "100%" ],
-    "ignored": "$is_on_3p_server",
+    "ignored": "($is_on_3p_server or $ignore_search)",
     "controls": [
       {
         "gamepad_helper_y_alignment_hack": {
@@ -1088,6 +1088,8 @@
     "size": [ "100%", "100%" ],
     "$store_header_size|default": [ "100%", 23 ],
     "$is_inventory_screen|default": false,
+    "$ignore_home_button|default": false,
+    "$ignore_search|default": false,
     "controls": [
       {
         "top_bar@common_store.store_top_bar": {
@@ -1113,9 +1115,8 @@
                     }
                   },
                   {
-                    "store_header_title_panel@common.screen_header_title_panel": {
+                    "header_title_panel@common.screen_header_title_panel": {
                       "layer": 1,
-                      "$screen_header_title": "#store_header_title",
                       "$screen_header_title_binding_type": "global"
                     }
                   },

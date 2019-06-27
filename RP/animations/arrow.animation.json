@@ -4,7 +4,7 @@
 		"animation.arrow.move" : {
 			"bones" : {
 				"body" : {
-					"rotation" : [ "-query.target_x_rotation", "-query.target_y_rotation", 0.0 ],
+					"rotation" : [ "variable.shake_power - query.target_x_rotation", "-query.target_y_rotation", 0.0 ],
 					"scale" : [ 0.6999999880790710, 0.6999999880790710, 0.8999999761581421 ]
 				}
 			},

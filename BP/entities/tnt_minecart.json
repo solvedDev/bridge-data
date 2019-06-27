@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.12.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:tnt_minecart",
@@ -14,10 +14,10 @@
           "on_activate": {
 
           },
-          "fuseLength": 4,
-          "fuseLit": true,
+          "fuse_length": 4,
+          "fuse_lit": true,
           "power": 3,
-          "causesFire": false
+          "causes_fire": false
         },
         "minecraft:rail_sensor": {
           
@@ -31,10 +31,10 @@
           "on_activate": {
 
           },
-          "fuseLength": 0,
-          "fuseLit": true,
+          "fuse_length": 0,
+          "fuse_lit": true,
           "power": 3,
-          "causesFire": false
+          "causes_fire": false
         },
         "minecraft:rail_sensor": {
           
@@ -130,6 +130,10 @@
       "minecraft:is_stackable": {
       },
 	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

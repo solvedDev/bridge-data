@@ -254,7 +254,7 @@
             },
             {
               // Stop-gap measure until we can get hyperlinks to work from VR and FireTV
-              "requires": "($is_holographic or $fire_tv or $nx_os)",
+              "requires": "($is_holographic or $fire_tv or $nx_os or $is_berwick)",
               "$pressed_button_name_privacy_policy": "button.privpol_popup"
             }
           ],
@@ -604,7 +604,7 @@
         "from_button_id": "button.controller_select",
         "to_button_id": "button.coin_wallet",
         "mapping_type": "global",
-        "ignored": "(not $nx_os)"
+        "ignored": "(not $nx_os and not $is_berwick)"
       }
     ],
     "$screen_content": "realms_create.realms_create_content",

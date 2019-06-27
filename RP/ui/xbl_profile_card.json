@@ -420,7 +420,7 @@
           ],
           "variables": [
             {
-              "requires": "$nx_os",
+              "requires": "($nx_os or $is_berwick)",
               "$focus_override_down": "mute_option"
             }
           ]
@@ -486,7 +486,7 @@
         "dropdown_visibility_panel": {
           "type": "panel",
           "size": [ "100%", "100%c" ],
-          "ignored": "($is_current_profile or $nx_os)",
+          "ignored": "($is_current_profile or $nx_os or $is_berwick)",
           "$focus_override_down": "mute_option",
           "controls": [
             {

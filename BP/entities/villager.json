@@ -1,5 +1,5 @@
 {
-  "format_version": "1.10.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:villager",
@@ -320,16 +320,25 @@
       },
 
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0
+        "total_supply": 15,
+        "suffocate_time": 0
       },
       "minecraft:health": {
         "value": 20,
         "max": 20
       },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 1.8
+        "height": 1.9
       },
       "minecraft:nameable": {
       },
@@ -357,30 +366,33 @@
         "inventory_size": 8,
         "private": true
       },
-      "minecraft:damage_sensor": [
-        {
-          "on_damage": {
-            "filters": { "test" :  "is_family", "subject" : "other", "value" :  "lightning" },
-            "event": "become_witch"
-          },
-          "deals_damage": false
-        },
-        {
-          "on_damage": {
-            "filters": {
-			  "any_of": [
-			    {"test": "is_family", "subject": "other", "value": "zombie"},
-			    {"test": "is_family", "subject": "other", "value": "husk"}
-			  ],
-			  "all_of": [
-			    {"test": "has_damage", "value": "fatal"}
-			  ]
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": { "test" :  "is_family", "subject" : "other", "value" :  "lightning" },
+              "event": "become_witch"
             },
-            "event": "become_zombie"
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+          "any_of": [
+            {"test": "is_family", "subject": "other", "value": "zombie"},
+            {"test": "is_family", "subject": "other", "value": "husk"}
+          ],
+          "all_of": [
+            {"test": "has_damage", "value": "fatal"}
+          ]
+              },
+              "event": "become_zombie"
+            }
           }
-        }
-      ],
-
+        ]
+      },
+      "minecraft:persistent": {
+      },
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -455,6 +467,10 @@
         "probability": 0.02
       },
 	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
     "events":{

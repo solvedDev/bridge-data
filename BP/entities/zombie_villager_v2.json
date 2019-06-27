@@ -1,5 +1,5 @@
 {
-  "format_version": "1.11.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:zombie_villager_v2",
@@ -28,7 +28,7 @@
             "zombie"
           ],
           "seats": {
-            "position": [ 0.0, 0.9, -0.25 ]
+            "position": [ 0.0, 1.1, -0.35 ]
           }
         },
         "minecraft:behavior.mount_pathing": {
@@ -307,22 +307,31 @@
       "minecraft:can_climb": {
       },
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0,
-        "breathesWater": true
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/zombie.json"
       },
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 1.8
+        "height": 1.9
       },
       "minecraft:burns_in_daylight": {},
 
       "minecraft:health": {
         "value": 20,
         "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:attack": {
         "damage": 3
@@ -412,6 +421,10 @@
         "must_see": true
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

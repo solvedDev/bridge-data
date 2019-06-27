@@ -109,6 +109,7 @@
     "$button_binding_condition|default": "none",
     "$button_text_grid_collection_name|default": "",
     "$button_tts_header|default": "accessibility.button.back",
+    "$back_button_pressed_button_name|default": "button.menu_exit",
     "bindings": [
       {
         "binding_name": "(not #is_using_gamepad)",
@@ -122,12 +123,12 @@
     "button_mappings": [
       {
         "from_button_id": "button.menu_select",
-        "to_button_id": "button.menu_exit",
+        "to_button_id": "$back_button_pressed_button_name",
         "mapping_type": "pressed"
       },
       {
         "from_button_id": "button.menu_ok",
-        "to_button_id": "button.menu_exit",
+        "to_button_id": "$back_button_pressed_button_name",
         "mapping_type": "focused"
       }
     ]
@@ -2377,28 +2378,46 @@
     "texture": "textures/ui/dialog_background_opaque"
   },
 
+  // Title area has space for text
+  // Area under hollow available for controls
   "dialog_background_hollow_1@dialog_background_hollow_common": {
     "texture": "textures/ui/dialog_background_hollow_1"
   },
 
+  // Title area has space for text
+  // Area under hollow available for buttons
   "dialog_background_hollow_2@dialog_background_hollow_common": {
     "texture": "textures/ui/dialog_background_hollow_2"
   },
 
+  // Title area has space for text
+  // No other area available besides hollow area
   "dialog_background_hollow_3@dialog_background_hollow_common": {
     "texture": "textures/ui/dialog_background_hollow_3"
   },
 
+  // No area available besides hollow area
+  // Good for tabbed content areas
   "dialog_background_hollow_4@dialog_background_hollow_common": {
     "texture": "textures/ui/dialog_background_hollow_4"
   },
 
+  // Title area has space for text (smaller than hollow 2)
+  // Area under hollow available for buttons
   "dialog_background_hollow_5@dialog_background_hollow_common": {
     "texture": "textures/ui/dialog_background_hollow_5"
   },
 
+  // Title area has space for text
+  // Area under hollow available for controls (larger than hollow 1)
   "dialog_background_hollow_6@dialog_background_hollow_common": {
     "texture": "textures/ui/dialog_background_hollow_6"
+  },
+
+  // Title area has space for controls
+  // No other area available besides hollow area
+  "dialog_background_hollow_7@dialog_background_hollow_common": {
+    "texture": "textures/ui/dialog_background_hollow_7"
   },
 
   "dialog_divider": {
@@ -5355,6 +5374,175 @@
         "binding_name_override": "#visible",
         "binding_collection_name": "$tooltip_button_collection_name",
         "binding_type": "$tooltip_button_binding_type"
+      }
+    ]
+  },
+
+  // Tool tip with centered chevron
+  // $tool_tip_text_max_size defines how text wraps (x wraps with a '-' and y will cut off with '...')
+  "dynamic_tooltip_popup_with_image_and_text@common.tooltip_background": {
+    "$override_tooltip_popup_image|default": false,
+    "$tooltip_popup_image|default": "",
+    "$ignore_tooltip_popup_image|default": false,
+    "$ignore_tooltip_popup_chevron|default": false,
+    "$tooltip_popup_visible_binding|default": "",
+    "$tooltip_panel_offset|default": [ 0, -2 ],
+
+    "min_size": [ 25, "default" ],
+    "size": [ "100%c - 6px", "100%cm + 8px" ],
+    "offset": "$tooltip_panel_offset",
+    "layer": 200, // always on top
+    "anchor_from": "top_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "image_and_text_stack_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", "100%cm" ],
+          "offset": [ 0.5, 0 ],
+          "layer": 2,
+          "controls": [
+            {
+              "tooltip_text_image_panel": {
+                "ignored": "$ignore_tooltip_popup_image",
+                "type": "panel",
+                "size": [ "100%y", "100%sm" ],
+                "min_size": [ 8, 8 ],
+                // The max y is 200 due to the fact that we have no way to say use inherited max sibling height
+                //   - 200 was used in thoughts that whatever text was used would not need more that 200px
+                //     allowing the image to grow and string with the height of the text object
+                "max_size": [ 12, 200 ],
+                "controls": [
+                  {
+                    "tooltip_image_panel": {
+                      "type": "panel",
+                      "size": [ "100%", "100%x" ],
+                      "$tooltip_popup_image_control_array|default": [
+                        {
+                          "tooltip_popup_image_panel": {
+                            "type": "image",
+                            "texture": "$tooltip_popup_image"
+                          }
+                        }
+                      ],
+                      "variables": [
+                        {
+                          "requires": "$override_tooltip_popup_image",
+                          "$tooltip_popup_image_control_array": [
+                            {
+                              "tooltip_popup_override_image_panel@$tooltip_popup_override_image_panel": {
+                                "size": [ "100%", "100%" ]
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "controls": "$tooltip_popup_image_control_array"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "padding": {
+                "ignored": "$ignore_tooltip_popup_image",
+                "type": "panel",
+                "size": [ 3, 0 ]
+              }
+            },
+            {
+              "tooltip_text": {
+                "type": "label",
+                "$tool_tip_text_max_size|default": [ "default", "default" ],
+                "max_size": "$tool_tip_text_max_size",
+                "size": [ "default", "default" ],
+                "$tooltip_text_binding_name|default": "#tooltip_text",
+                "text": "$tooltip_text_binding_name",
+                "$tooltip_text_color|default": "$f_color_format",
+                "color": "$tooltip_text_color",
+                "bindings": [
+                  {
+                    "binding_name": "$tooltip_text_binding_name",
+                    "binding_collection_name": "$tooltip_button_collection_name",
+                    "binding_type": "$tooltip_button_binding_type",
+                    "binding_condition": "visibility_changed"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tooltip_chevron": {
+          "ignored": "$ignore_tooltip_popup_chevron",
+          "type": "image",
+          "layer": 2,
+          "$tooltip_popup_chevron_size|default": [ 19, 13 ],
+          "size": "$tooltip_popup_chevron_size",
+          "$tooltip_popup_chevron_offset|default": [ 0, "100%y - 3px" ],
+          "offset": "$tooltip_popup_chevron_offset",
+          "$tooltip_chevron_anchor|default": "bottom_middle",
+          "anchor_to": "$tooltip_chevron_anchor",
+          "anchor_from": "$tooltip_chevron_anchor",
+          "$tooltip_popup_chevron_texture|default": "textures/ui/tooltip_default_chevron",
+          "texture": "$tooltip_popup_chevron_texture"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "$tooltip_popup_visible_binding",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "$tooltip_button_collection_name",
+        "binding_type": "$tooltip_button_binding_type"
+      }
+    ]
+  },
+
+  // Helper for tooltips intended to be below control
+  "dynamic_tooltip_below@dynamic_tooltip_popup_with_image_and_text": {
+    "$tooltip_panel_offset": [ 0, 2 ],
+    "anchor_to": "top_middle",
+    "anchor_from": "bottom_middle",
+    "$tooltip_chevron_anchor": "top_middle",
+    "$tooltip_popup_chevron_offset": [ 0, "-100%y + 3px" ],
+    "$tooltip_popup_chevron_texture": "textures/ui/tooltip_inverted_chevron"
+  },
+
+  // Helper for tooltips with dynamic positioning
+  "dynamic_tooltip": {
+    "type": "panel",
+    "$tooltip_above_binding_name|default": "",
+    "$tooltip_above_binding_collection_name|default": "",
+    "$tooltip_above_binding_type|default": "none",
+    "controls": [
+      {
+        "above@common.empty_panel": {
+          "controls": [ { "content@dynamic_tooltip_popup_with_image_and_text": { } } ],
+          "bindings": [
+            {
+              "binding_name": "$tooltip_above_binding_name",
+              "binding_name_override": "#visible",
+              "binding_collection_name": "$tooltip_above_binding_collection_name",
+              "binding_type": "$tooltip_above_binding_type"
+            }
+          ]
+        }
+      },
+      {
+        "below@common.empty_panel": {
+          "controls": [ { "content@dynamic_tooltip_below": { } } ],
+          "bindings": [
+            {
+              "binding_name": "(not $tooltip_above_binding_name)",
+              "binding_name_override": "#visible",
+              "binding_collection_name": "$tooltip_above_binding_collection_name",
+              "binding_type": "$tooltip_above_binding_type"
+            }
+          ]
+        }
       }
     ]
   },

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:stray",
@@ -24,7 +24,7 @@
         "minecraft:shooter": {
           "type": "Arrow",
           "def": "minecraft:arrow",
-          "auxVal": 19
+          "aux_val": 19
         },
         "minecraft:environment_sensor": {
           "on_environment": {
@@ -56,19 +56,28 @@
 
     "components": {
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0,
-        "breathesWater": true
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
       },
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 1.95
+        "height": 1.9
       },
       "minecraft:burns_in_daylight": {},
       "minecraft:nameable": {},
       "minecraft:health": {
         "value": 20,
         "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/stray.json"
@@ -93,7 +102,7 @@
       "minecraft:shooter": {
         "type": "Arrow",
         "def": "minecraft:arrow",
-        "auxVal": 19
+        "aux_val": 19
       },
       "minecraft:environment_sensor": {
         "on_environment": {
@@ -185,6 +194,10 @@
         "family": [ "stray", "skeleton", "monster", "undead" ]
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
     },
 

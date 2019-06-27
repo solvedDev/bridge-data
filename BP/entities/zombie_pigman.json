@@ -1,5 +1,5 @@
 {
-  "format_version": "1.10.0",
+  "format_version": "1.12.0",
   "minecraft:entity": {
     "description": {
       "identifier": "minecraft:zombie_pigman",
@@ -21,8 +21,8 @@
       "minecraft:pig_zombie_angry": {
         "minecraft:angry": {
           "duration": 25,
-          "broadcastAnger": true,
-          "broadcastRange": 20,
+          "broadcast_anger": true,
+          "broadcast_range": 20,
           "calm_event": {
             "event": "minecraft:on_calm",
             "target": "self"
@@ -39,13 +39,13 @@
 
     "components": {
       "minecraft:breathable": {
-        "totalSupply": 15,
-        "suffocateTime": 0,
-        "breathesWater": true
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
       },
       "minecraft:collision_box": {
         "width": 0.6,
-        "height": 1.8
+        "height": 1.9
       },
       "minecraft:nameable": {
       },
@@ -122,21 +122,47 @@
         "priority": 1
       },
       "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
       }
-
     },
 
 
     "events": {
       "minecraft:entity_transformed": {
-        "remove": {
-        },
-        "add": {
-          "component_groups": [
-            "minecraft:pig_zombie_adult",
-            "minecraft:pig_zombie_calm"
-          ]
-        }
+        "sequence": [
+          // Transform baby pig to baby zombie pigman
+          {
+            "filters": {
+              "test": "has_component",
+              "subject": "other",
+              "value": "minecraft:is_baby"
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:pig_zombie_baby",
+                "minecraft:pig_zombie_calm"
+              ]
+            }
+          },
+          // Transform adult pig to adult zombie pigman
+          {
+            "filters": {
+              "test": "has_component",
+              "subject": "other",
+              "operator": "!=",
+              "value": "minecraft:is_baby"
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:pig_zombie_adult",
+                "minecraft:pig_zombie_calm"
+              ]
+            }
+          }
+        ]
       },
       "minecraft:entity_spawned": {
         "randomize": [

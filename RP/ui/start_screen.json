@@ -269,15 +269,15 @@
   },
 
 
-  "nx_signin_button@common_buttons.light_text_button": {
+  "platform_signin_button@common_buttons.light_text_button": {
     "$pressed_button_name": "button.signin",
     "$button_text_max_size": [ "100%", 20 ],
     "$focus_id": "menu_xbox_signin_button",
-    "$button_text": "#nx_signin_text",
+    "$button_text": "#platform_signin_text",
     "$button_text_binding_type": "global",
     "bindings": [
       {
-        "binding_name": "#nx_signin_text"
+        "binding_name": "#platform_signin_text"
       }
     ]
   },
@@ -309,7 +309,7 @@
           "controls": [
             {
               "gamertag_pic_and_label": {
-                "ignored": "(not $nx_os)",
+                "ignored": "(not $nx_os and not $is_berwick)",
                 "type": "stack_panel",
                 "orientation": "horizontal",
                 "size": [ "100%c", 16 ],
@@ -413,7 +413,7 @@
             },
             {
               "xbl_btn@start.column_frame": {
-                "ignored": "($nx_os)",
+                "ignored": "($nx_os or $is_berwick)",
                 "size": [ 94, 32 ],
                 "max_size": [ "95%", 32 ],
                 "controls": [
@@ -428,13 +428,13 @@
               }
             },
             {
-              "nx_signin_btn@start.column_frame": {
-                "ignored": "(not $nx_os)",
+              "platform_signin_btn@start.column_frame": {
+                "ignored": "(not $nx_os and not $is_berwick)",
                 "size": [ 130, 32 ],
                 "max_size": [ "95%", 32 ],
                 "controls": [
                   {
-                    "nx_signin_button@start.nx_signin_button": {}
+                    "platform_signin_button@start.platform_signin_button": {}
                   }
                 ],
                 "bindings": [
@@ -497,6 +497,11 @@
         "binding_name": "#focus_change_left"
       }
     ]
+  },
+
+  "join_button@start.main_button": {
+    "$pressed_button_name": "button.join_temp",
+    "$button_text": "progressScreen.dialog.button.join"
   },
 
   "course_button@start.main_button": {
@@ -697,8 +702,25 @@
           "controls": [
             {
               "stacked_row_0@start.stacked_row": {
+                "ignored": "$education_edition_china",
                 "controls": [
                   { "play_button@start.play_button": {} }
+                ]
+              }
+            },
+            {
+              "join@start.stacked_row": {
+                "ignored": "(not $education_edition or $is_publish)",
+                "controls": [
+                  { "join_button@start.join_button": {} }
+                ]
+              }
+            },
+            {
+              "course@start.stacked_row": {
+                "ignored": "(not $education_edition_china)",
+                "controls": [
+                  { "course_button@start.course_button": {} }
                 ]
               }
             },
@@ -791,7 +813,7 @@
             },
             {
               "library@start.stacked_row": {
-                "ignored": "(not $education_edition)",
+                "ignored": "(not $education_edition) or $education_edition_china",
                 "controls": [
                   { "library_button@start.library_button": {} }
                 ]
@@ -799,7 +821,7 @@
             },
             {
               "switch_accounts_or_educator_resources@start.stacked_row": {
-                "ignored": "(not $education_edition)",
+                "ignored": "(not $education_edition) or $education_edition_china",
                 "controls": [
                   {
                     "switch_accounts@start.switch_accounts_button": {
@@ -1043,9 +1065,15 @@
       {
         "requires": "$nx_os",
         "$feedback_ignored": true
+      },
+      {
+        "requires": "$is_berwick",
+        "$achievements_ignored": true,
+        "$feedback_ignored": true
       }
     ],
     "controls": [
+      { "joincode_popup_factory@joincode.joincode_popup_factory": { } },
       {
         "skin_panel@start.skin_panel": { "layer": 1 }
       },
