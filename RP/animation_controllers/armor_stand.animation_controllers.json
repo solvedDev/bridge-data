@@ -6,6 +6,8 @@
 			"states" : {
 				"athena" : {
 					"animations" : [ "athena_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -47,6 +49,8 @@
 				},
 				"brandish" : {
 					"animations" : [ "brandish_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -88,6 +92,8 @@
 				},
 				"cancan_a" : {
 					"animations" : [ "cancan_a_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -129,6 +135,8 @@
 				},
 				"cancan_b" : {
 					"animations" : [ "cancan_b_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -170,6 +178,8 @@
 				},
 				"default" : {
 					"animations" : [ "default_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"none" : "variable.armor_stand.pose_index == 1"
@@ -211,6 +221,8 @@
 				},
 				"entertain" : {
 					"animations" : [ "entertain_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -252,6 +264,8 @@
 				},
 				"hero" : {
 					"animations" : [ "hero_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -293,6 +307,8 @@
 				},
 				"honor" : {
 					"animations" : [ "honor_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -334,6 +350,8 @@
 				},
 				"none" : {
 					"animations" : [ "no_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -375,6 +393,8 @@
 				},
 				"riposte" : {
 					"animations" : [ "riposte_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -416,6 +436,8 @@
 				},
 				"salute" : {
 					"animations" : [ "salute_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -457,6 +479,8 @@
 				},
 				"solemn" : {
 					"animations" : [ "solemn_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"
@@ -498,6 +522,8 @@
 				},
 				"zombie" : {
 					"animations" : [ "zombie_pose" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
 					"transitions" : [
 						{
 							"default" : "variable.armor_stand.pose_index == 0"

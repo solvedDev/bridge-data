@@ -1779,11 +1779,11 @@
       { "curor_rend@cursor_renderer": {} },
       {
         "game_tip@game_tip.game_tip_panel": {
-          "$offset": [ 0, "-80px" ],
+          "$offset": [ 0, "-90px" ],
           "variables": [
             {
               "requires": "$pocket_screen",
-              "$offset": [ 0, "-50px" ]
+              "$offset": [ 0, "-60px" ]
             }
           ],
           "offset": "$offset"

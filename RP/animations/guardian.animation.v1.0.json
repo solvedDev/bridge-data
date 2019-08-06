@@ -2,14 +2,15 @@
 	"format_version" : "1.8.0",
 	"animations" : {
 		"animation.guardian.move_eye.v1.0" : {
+			"loop" : true,
 			"bones" : {
 				"eye" : {
 					"position" : [ "query.eye_target_x_rotation - this", "query.eye_target_y_rotation - 1.0 - this", "-8.25 - this" ]
 				}
-			},
-			"loop" : true
+			}
 		},
 		"animation.guardian.spikes.v1.0" : {
+			"loop" : true,
 			"bones" : {
 				"spikepart0" : {
 					"position" : [ "-this", "-8 * (1 + math.cos(query.life_time * 20 * 1.5) * 0.01 + (variable.spike_extension + variable.spike_shake)) - this", "8 * (1 + math.cos(query.life_time * 20 * 1.5) * 0.01 - (variable.spike_extension + variable.spike_shake)) - this" ]
@@ -47,8 +48,7 @@
 				"spikepart9" : {
 					"position" : [ "-this", "-32 + 8 * (1 + math.cos(query.life_time * 20 * 1.5 + 9) * 0.01 + (variable.spike_extension + variable.spike_shake)) - this", "-8 * (1 + math.cos(query.life_time * 20 * 1.5 + 9) * 0.01 - (variable.spike_extension + variable.spike_shake)) - this" ]
 				}
-			},
-			"loop" : true
+			}
 		}
 	}
 }

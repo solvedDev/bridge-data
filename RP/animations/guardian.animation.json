@@ -2,14 +2,15 @@
 	"format_version" : "1.8.0",
 	"animations" : {
 		"animation.guardian.move_eye" : {
+			"loop" : true,
 			"bones" : {
 				"eye" : {
 					"position" : [ "query.eye_target_x_rotation - this", "24 + query.eye_target_y_rotation - this", "-8.25 - this" ]
 				}
-			},
-			"loop" : true
+			}
 		},
 		"animation.guardian.setup" : {
+			"loop" : true,
 			"bones" : {
 				"spikepart0" : {
 					"rotation" : [ "-45.0 - this", "0.0 - this", "0.0 - this" ]
@@ -47,10 +48,10 @@
 				"spikepart9" : {
 					"rotation" : [ "135.0 - this", "0.0 - this", " 0.0 - this" ]
 				}
-			},
-			"loop" : true
+			}
 		},
 		"animation.guardian.spikes" : {
+			"loop" : true,
 			"bones" : {
 				"spikepart0" : {
 					"position" : [ "-this", "24 + -8 * (1 + math.cos(query.life_time * 20 * 1.5) * 0.01 + (variable.spike_extension + variable.spike_shake)) - this", "8 * (1 + math.cos(query.life_time * 20 * 1.5) * 0.01 - (variable.spike_extension + variable.spike_shake)) - this" ]
@@ -88,10 +89,10 @@
 				"spikepart9" : {
 					"position" : [ "-this", "-8 + 8 * (1 + math.cos(query.life_time * 20 * 1.5 + 9) * 0.01 + (variable.spike_extension + variable.spike_shake)) - this", "-8 * (1 + math.cos(query.life_time * 20 * 1.5 + 9) * 0.01 - (variable.spike_extension + variable.spike_shake)) - this" ]
 				}
-			},
-			"loop" : true
+			}
 		},
 		"animation.guardian.swim" : {
+			"loop" : true,
 			"bones" : {
 				"tailpart0" : {
 					"rotation" : [ 0.0, "variable.tail_base_angle * 11.6 - this", 0.0 ]
@@ -104,8 +105,7 @@
 					"position" : [ "0.5 - this", "-0.5 - this", "6.0 - this" ],
 					"rotation" : [ 0.0, "variable.tail_base_angle * 34.4 - this", 0.0 ]
 				}
-			},
-			"loop" : true
+			}
 		}
 	}
 }

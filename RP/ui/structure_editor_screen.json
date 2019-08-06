@@ -597,9 +597,27 @@
         }
       },
       {
-        "offset_0": {
+        "include_entities_offset": {
           "type": "panel",
-          "size": [ "100%", "100%c + 4px" ]
+          "size": [ "100%", 4 ]
+        }
+      },
+      {
+        "include_entities@structure_editor.include_entities_panel": {}
+      },
+      {
+        "remove_blocks_offset": {
+          "type": "panel",
+          "size": [ "100%", 4 ]
+        }
+      },
+      {
+        "remove_blocks@structure_editor.remove_blocks_panel": {}
+      },
+      {
+        "integrity_offset": {
+          "type": "panel",
+          "size": [ "100%", 4 ]
         }
       },
       {

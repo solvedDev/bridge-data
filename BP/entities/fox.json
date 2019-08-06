@@ -25,7 +25,7 @@
         },
 
         "minecraft:behavior.follow_parent": {
-          "priority": 5,
+          "priority": 9,
           "speed_multiplier": 1.1
         }
       },
@@ -85,7 +85,7 @@
           "speed_multiplier": 1.25
         },
         "minecraft:behavior.melee_attack": {
-          "priority": 7,
+          "priority": 10,
           "target_dist": 1.2,
           "track_target": true,
           "require_complete_path": true,
@@ -132,7 +132,7 @@
           "value": 0
         },
         "minecraft:behavior.nearest_prioritized_attackable_target": {
-          "priority": 4,
+          "priority": 6,
           "attack_interval": 2,
           "reselect_targets": true,
           "entity_types": [
@@ -209,7 +209,7 @@
           "value": 1
         },
         "minecraft:behavior.nearest_prioritized_attackable_target": {
-          "priority": 4,
+          "priority": 6,
           "attack_interval": 2,
           "reselect_targets": true,
           "entity_types": [
@@ -322,7 +322,7 @@
           }
         ],
         "minecraft:behavior.nap": {
-          "priority": 5,
+          "priority": 8,
           "cooldown_min": 2.0,
           "cooldown_max": 7.0,
           "mob_detect_dist": 12.0,
@@ -379,7 +379,7 @@
           }
         },
         "minecraft:behavior.find_cover": {
-          "priority": 6,
+          "priority": 9,
           "speed_multiplier": 1,
           "cooldown_time": 5.0
         }
@@ -396,13 +396,14 @@
             "event": "minecraft:fox_configure_day"
           }
         ],
-	
-        "minecraft:behavior.move_to_village": {
-          "priority": 6,
+
+        "minecraft:behavior.stroll_towards_village": {
+          "priority": 11,
           "speed_multiplier": 1.0,
-          "goal_radius": 10.0,
+          "goal_radius": 3.0,
           "cooldown_time": 10.0,
-          "search_range": 32
+          "search_range": 32,
+          "start_chance": 0.005
         }
       },
 
@@ -457,7 +458,7 @@
         "max": 20
       },
       "minecraft:movement": {
-        "value": 0.35
+        "value": 0.3
       },
       "minecraft:attack": {
         "damage": 2
@@ -523,36 +524,20 @@
         "priority": 0
       },
       "minecraft:behavior.avoid_mob_type": {
-        "priority": 2,
+        "priority": 5,
         "entity_types": [
           {
             "filters": {
               "any_of": [
                 {
                   "all_of": [
-                    {
-                      "test": "is_family",
-                      "subject": "other",
-                      "value": "player"
-                    },
-                    {
-                      "test": "trusts",
-                      "subject": "other",
-                      "operator": "!=",
-                      "value": true
-                    }
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "trusts", "subject": "other", "operator": "!=", "value": true },
+                    { "test": "is_sneaking", "subject": "other", "operator": "!=", "value": true }
                   ]
                 },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "polarbear"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "wolf"
-                }
+                { "test": "is_family", "subject": "other", "value": "polarbear" },
+                { "test": "is_family", "subject": "other", "value": "wolf" }
               ]
             },
             "max_dist": 10,
@@ -561,17 +546,8 @@
           }
         ]
       },
-      "minecraft:behavior.tempt": {
-        "priority": 3,
-        "speed_multiplier": 0.5,
-        "within_radius": 16,
-        "can_get_scared": true,
-        "items": [
-          "sweet_berries"
-        ]
-      },
       "minecraft:behavior.stalk_and_pounce_on_target": {
-        "priority": 4,
+        "priority": 7,
         "stalk_speed": 1.2,
         "max_stalk_dist": 12.0,
         "leap_height": 0.9,
@@ -588,17 +564,17 @@
           }
       },
       "minecraft:behavior.pickup_items": {
-        "priority": 8,
+        "priority": 11,
         "max_dist": 3,
         "goal_radius": 2,
         "speed_multiplier": 0.5
       },
       "minecraft:behavior.eat_carried_item": {
-        "priority": 9,
+        "priority": 12,
         "delay_before_eating": 28
       },
       "minecraft:behavior.random_look_around_and_sit": {
-        "priority": 9,
+        "priority": 12,
         "min_look_count": 2,
         "max_look_count": 5,
         "min_look_time": 80,
@@ -606,7 +582,7 @@
         "probability": 0.001
       },
       "minecraft:behavior.raid_garden": {
-        "priority": 9,
+        "priority": 12,
         "blocks": [
           "minecraft:sweet_berry_bush"
         ],
@@ -618,16 +594,16 @@
         "initial_eat_delay": 2
       },
       "minecraft:behavior.random_stroll": {
-        "priority": 10,
+        "priority": 13,
         "speed_multiplier": 0.8
       },
       "minecraft:behavior.look_at_player": {
-        "priority": 11,
+        "priority": 14,
         "look_distance": 6.0,
         "probability": 0.02
       },
       "minecraft:behavior.random_look_around": {
-        "priority": 12
+        "priority": 15
       },
       "minecraft:leashable": {
         "soft_distance": 4.0,
@@ -733,23 +709,13 @@
       },
 
       "minecraft:entity_born": {
-        "sequence": [
-          { "add": { "component_groups": [ "minecraft:fox_baby", "minecraft:trusting_fox", "minecraft:docile_fox" ] } },
-          {
-            "filters": {
-              "test": "is_snow_covered",
-              "value": true
-            },
-            "add": { "component_groups": [ "minecraft:fox_arctic" ] }
-          },
-          {
-            "filters": {
-              "test": "is_snow_covered",
-              "value": false
-            },
-            "add": { "component_groups": [ "minecraft:fox_red" ] }
-          }
-        ]
+        "add": {
+          "component_groups": [
+            "minecraft:fox_baby",
+            "minecraft:trusting_fox",
+            "minecraft:docile_fox"
+          ]
+        }
       },
 
       "minecraft:ageable_grow_up": {

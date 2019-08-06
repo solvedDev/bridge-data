@@ -67,7 +67,6 @@
     "ui/inventory_screen_pocket.json",
     "ui/invite_screen.json",
     "ui/joincode_entry_screen.json",
-    "ui/berwick_trial_conversion_screen.json",
     "ui/late_join_pregame_screen.json",
     "ui/library_item_screen.json",
     "ui/library_modal_screen.json",

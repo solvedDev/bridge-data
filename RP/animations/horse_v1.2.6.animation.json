@@ -2,6 +2,7 @@
 	"format_version" : "1.8.0",
 	"animations" : {
 		"animation.horse_v1.2.6.setup" : {
+			"loop" : true,
 			"bones" : {
 				"bag1" : {
 					"rotation" : [ "-this", "-this", "-this" ]
@@ -45,8 +46,7 @@
 				"saddlemouthr" : {
 					"rotation" : [ "-this", "-this", "-this" ]
 				}
-			},
-			"loop" : true
+			}
 		}
 	}
 }

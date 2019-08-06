@@ -71,19 +71,6 @@
             }
           ]
         }
-      },
-      {
-        "infinite_loading_bar_icon@feed_common.progress_loading_bars": {
-          "layer": 3,
-          "visible": "#infinite_progress_visible",
-          "size": [ "50%", 150 ],
-          "bindings": [
-            {
-              "binding_name": "#infinite_progress_visible",
-              "binding_name_override": "#visible"
-            }
-          ]
-        }
       }
     ]
   },

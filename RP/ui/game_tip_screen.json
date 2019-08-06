@@ -23,7 +23,7 @@
     "$tip_min_size|default": [ "default", "default" ],
     "size": [ "default", "default" ],
     "min_size": "$tip_min_size",
-    "$tip_max_size|default": [ 165, 36 ],
+    "$tip_max_size|default": [ 165, 40 ],
     "max_size": "$tip_max_size",
     "$animation|default": [
       "@game_tip.anim_game_tip_txt_wait"
@@ -270,7 +270,6 @@
     "$up_enabled|default": false,
     "$is_recipe_book_tip|default": false,
     "$is_hotbar_tip|default": false,
-    "$is_equipment_tab_tip|default": false,
     "$is_workbench_outputslot_tip|default": false,
     "variables": [
       {
@@ -311,11 +310,6 @@
         "requires": "$is_hotbar_tip",
         "$offset_value": [ 0, -30 ],
         "$chevron_offset": [ 0, 14 ]
-      },
-      {
-        "requires": "$is_equipment_tab_tip",
-        "$offset_value": [ 0, 32 ],
-        "$chevron_offset": [ 0, -17 ]
       }
     ],
     "offset": "$offset_value",
@@ -364,7 +358,7 @@
               "$offset": [ -50, 0 ]
             },
             {
-              "requires": "(($is_recipe or $is_equipment_tab_tip) and $pocket_screen)",
+              "requires": "($is_recipe and $pocket_screen)",
               "$offset": [ 55, 0 ]
             },
             {
@@ -384,7 +378,7 @@
               "$tip_max_size": [ 155, "default" ]
             },
             {
-              "requires": "(($is_close or $is_recipe or $is_equipment_tab_tip) and $pocket_screen)",
+              "requires": "(($is_close or $is_recipe) and $pocket_screen)",
               "$tip_max_size": [ 110, "default" ],
               "$tip_min_size": [ 110, "default" ]
             }

@@ -61,13 +61,13 @@
       },
       {
         "play_or_create_panel": {
+          "ignored": "(not $is_pregame)",
           "type": "stack_panel",
           "size": [ "100%", 30 ],
           "orientation": "horizontal",
           "controls": [
             {
               "create_or_play_button@settings_common.action_button": {
-                "ignored": "(not $is_pregame)",
                 "size": [ "fill", 30 ],
                 "$button_text": "menu.play",
                 "default_focus_precedence": 1,
@@ -82,10 +82,14 @@
             },
             {
               "play_on_realm_button@settings_common.action_button": {
-                "ignored": "(not $is_pregame)",
+                "ignored": "(not $is_pregame or $education_edition)",
                 "size": [ "50%", 30 ],
                 "$button_text": "menu.playOnRealms",
+                "$button_text_max_size": [ "100%", 20 ],
                 "default_focus_precedence": 2,
+                "$default_button_texture": "textures/ui/realmsContent",
+                "$hover_button_texture": "textures/ui/realmsContentHover",
+                "$pressed_button_texture": "textures/ui/realmsContentPressed",
                 "$pressed_button_name": "play_world_on_realm_button",
                 "$focus_override_up": "FOCUS_OVERRIDE_STOP",
                 "variables": {

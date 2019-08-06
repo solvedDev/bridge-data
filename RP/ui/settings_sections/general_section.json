@@ -1911,6 +1911,15 @@
         }
       },
       {
+        "option_toggle3@settings_common.option_toggle": {
+          "ignored": "(not $text_to_speech_supported)",
+          "$option_label": "options.enableOpenChatMessage",
+          "$option_binding_name": "#enable_open_chat_message",
+          "$option_enabled_binding_name": "#enable_open_chat_message_enabled",
+          "$toggle_name": "enable_open_chat_message"
+        }
+      },
+      {
         "reset_button@settings_common.action_button": {
           "ignored": "(not $is_pregame)",
           "$pressed_button_name": "button.reset_settings",

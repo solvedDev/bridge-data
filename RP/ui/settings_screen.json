@@ -68,6 +68,20 @@
     "$default_selector_toggle_index": 0,
     "controls": [
 
+      {
+        "spacer_0": {
+          "ignored": "(not $include_world_section)",
+          "type": "panel",
+          "size": [ 2, 2 ]
+        }
+      },
+      {
+        "accessibility_button@general_section.accessibility_button": {
+          "$toggle_group_forced_index": "$accessibility_forced_index",
+          "ignored": "(not $include_controls_and_settings_sections)"
+        }
+      },
+
       // the list of selection toggle buttons, add yours here...
       {
         "world_selector_pane@world_section.selector_pane_content": {
@@ -91,19 +105,6 @@
           "$controls_section_header": "options.group.input",
           "$general_section_header": "stat.generalButton",
           "controls": [
-
-            {
-              "spacer_0": {
-                "ignored": "(not $include_world_section)",
-                "type": "panel",
-                "size": [ 2, 2 ]
-              }
-            },
-            {
-              "accessibility_button@general_section.accessibility_button": {
-                "$toggle_group_forced_index": "$accessibility_forced_index"
-              }
-            },
 
             // Controls Section //
 
@@ -158,9 +159,9 @@
               }
             },
             {
-                "selector_group_label_2@settings_common.selector_group_label": {
-                  "text": "$general_section_header"
-                }
+              "selector_group_label_2@settings_common.selector_group_label": {
+                "text": "$general_section_header"
+              }
             },
             {
               "profile_button@general_section.profile_button": {

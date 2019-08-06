@@ -12,10 +12,6 @@
         "texture_index": 39
       },
       "scripts": {
-        "pre_animation": [
-          "variable.attack = Math.sin(1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0;",
-          "variable.attack2 = Math.sin(variable.attack_time * 180.0);"
-        ],
         "scale": "0.9375"
       },
       "animations": {

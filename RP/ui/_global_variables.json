@@ -151,6 +151,8 @@
   "$npc_dialog_text_color": [ 0.0, 0.0, 0.0 ],
   "$npc_url_text_color": [ 0.0, 0.0, 1.0 ],
 
+  "$wtc_pack_desc_text_color": [ 0.75, 0.75, 0.75 ],
+
   //////// Glyph colors ////////
   "$light_glyph_default_color": [ 0.3, 0.3, 0.3 ],
   "$light_glyph_hover_color": [ 1.0, 1.0, 1.0 ],
