@@ -457,7 +457,10 @@
       {
         "accessibility_selection_highlight": {
           "type": "image",
-          "size": [ "100% + 4px", "100% + 2px" ],
+          "$selection_highlight_size|default": [ "100% + 4px", "100% + 2px" ],
+          "size": "$selection_highlight_size",
+          "$selection_highlight_offset|default": [ 0, 0 ],
+          "offset": "$selection_highlight_offset",
           "ignored": "(not $selected and not $hovered)",
           "$highlight_image|default": "",
           "texture": "$highlight_image",
@@ -919,7 +922,7 @@
   "option_radio_dropdown_group": {
     "type": "panel",
     "size": [ "100% - 4px", "100%c + 4px" ],
-    "offset": [ 2, 2 ],
+    "offset": [ 2, 1 ],
     "$toggle_tts_header": "",
     "$toggle_tts_name": "accessibility.dropdown.listItem",
     "$toggle_tts_toggle_on_text": "accessibility.state.selected",

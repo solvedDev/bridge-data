@@ -17,7 +17,7 @@
 					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
 				},
 				"rightarm" : {
-					"position" : [ 12.5, "-10.5 - (1.0 - variable.player_height) * 8.0", 12.0 ],
+					"position" : [ 12.5, -10.5, 12.0 ],
 					"rotation" : [ "80.0 + variable.is_using_vr * 7.5", "-50.0 + variable.is_using_vr * 7.5", "120.0 + variable.is_using_vr * -2.5" ]
 				}
 			}
@@ -77,6 +77,17 @@
 					"position" : [ "-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7", "-8.250 + variable.short_arm_offset_left", "11.50 + variable.is_horizontal_splitscreen * 0.5" ],
 					"rotation" : [ 195.0, 182.5, 2.5 ],
 					"scale" : [ 0.75, 0.75, 0.75 ]
+				}
+			}
+		},
+		"animation.player.first_person.swap_item" : {
+			"loop" : true,
+			"bones" : {
+				"leftarm" : {
+					"position" : [ 0.0, "query.get_equipped_item_name('off_hand') == 'map' ? 0.0 : -10.0 * (1.0 - variable.player_arm_height)", 0.0 ]
+				},
+				"rightarm" : {
+					"position" : [ 0.0, "-10.0 * (1.0 - variable.player_arm_height)", 0.0 ]
 				}
 			}
 		},
