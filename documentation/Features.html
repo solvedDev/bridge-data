@@ -1,4 +1,4 @@
-<h1>FEATURES DOCUMENTATION </br>Version: 1.15.0.53</h1>
+<h1>FEATURES DOCUMENTATION </br>Version: 1.16.0.58</h1>
 This is documentation for a beta release of Minecraft. New features, components, and capabilities in this release are not final and might change without notice before the final release.<br/>Be sure to check the documentation once the release is out of beta if your add-on isn't working properly. Resource and Behavior Packs created for the beta are not guaranteed to work on the final release.<br/>
 <h2><p id="Index">Index</p></h2>
 <table border="1">
@@ -479,11 +479,6 @@ Here is the complete feature schema<br / ><textarea readonly="true" cols="192" r
           {
               string "identifier" // The name of this feature in the form 'namespace_name:feature_name'. 'feature_name' must match the filename.
           }
-          object "can_be_submerged" : opt
-          {
-              int "max_depth"<1-*>
-          }
-          bool "can_be_submerged" : opt
           block_reference "base_block" : opt
           array "base_block" : opt
           {
@@ -499,6 +494,10 @@ Here is the complete feature schema<br / ><textarea readonly="true" cols="192" r
               int "cluster_radius"<0-*>
           }
           array "may_grow_on" : opt
+          {
+              block_reference "<any array element>"
+          }
+          array "may_replace" : opt
           {
               block_reference "<any array element>"
           }
@@ -765,6 +764,11 @@ Here is the complete feature schema<br / ><textarea readonly="true" cols="192" r
           {
                "trunk_height"
                "height_modifier" : opt
+              object "can_be_submerged" : opt
+              {
+                  int "max_depth"<1-*>
+              }
+              bool "can_be_submerged" : opt
               block_reference "trunk_block"
               object "trunk_decoration" : opt
               {
